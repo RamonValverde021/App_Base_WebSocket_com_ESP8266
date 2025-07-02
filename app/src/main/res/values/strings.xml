@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Base_Websocket</string>
+    <string name="btnTest">Test</string>
+    <string name="btnConnec">Connect</string>
+    <string name="btnDesconnect">Desconnect</string>
+    <string name="lbTitleSerial">Serial</string>
+    <string name="msgAppConnected">Application Connected!</string>
+    <string name="msgFailReconnect">Failed to reconnect</string>
+    <string name="msgSocketNotOpenYet">Socket not opened yet</string>
+    <string name="msgDisconnected">Disconnected</string>
+    <string name="msgAlreadyDisconnect">Already disconnected</string>
+    <string name="msgErrorDisconnecting">Error disconnecting</string>
+    <string name="msgAlreadyConnected">Already connected</string>
+    <string name="msgConnecting">Connecting...</string>
+    <string name="msgErrorConnecting">Error connecting</string>
+    <string name="msgConnectionLostTryingToReconnect">Connection lost, trying to reconnect...</string>
+    <string name="msgConnectionErrorTryingToReconnect">Connection error, trying to reconnect...</string>
+</resources>

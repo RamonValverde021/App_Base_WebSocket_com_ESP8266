@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="standardButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">?attr/clrStdBtn_Border</item>           <!-- Cor da borda -->
+        <item name="backgroundTint">?attr/clrStdBtn_Background</item>    <!-- Cor de fundo -->
+        <item name="android:textColor">?attr/clrStdBtn_Text</item>       <!-- Cor do texto -->
+        <item name="android:textSize">24sp</item>                        <!-- Tamanho do texto -->
+        <item name="cornerRadius">22dp</item>                            <!-- Cantos arredondados -->
+        <item name="strokeWidth">3dp</item>                              <!-- Largura da borda -->
+        <item name="android:layout_marginLeft">5dp</item>                <!-- Margem esquerda -->
+        <item name="android:layout_marginRight">5dp</item>               <!-- Margem direita -->
+    </style>
+</resources>

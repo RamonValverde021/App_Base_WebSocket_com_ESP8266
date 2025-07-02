@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Base_Websocket</string>
+    <string name="btnTest">Test</string>
+    <string name="btnConnec">Connetti</string>
+    <string name="btnDesconnect">Disconnetti</string>
+    <string name="lbTitleSerial">Seriale</string>
+    <string name="msgAppConnected">Applicazione connessa!</string>
+    <string name="msgFailReconnect">Impossibile riconnettersi</string>
+    <string name="msgSocketNotOpenYet">Socket non ancora aperto</string>
+    <string name="msgDisconnected">Disconnesso</string>
+    <string name="msgAlreadyDisconnect">Già disconnesso</string>
+    <string name="msgConnecting">Connessione in corso...</string>
+    <string name="msgErrorConnecting">Errore di disconnessione</string>
+    <string name="msgErrorDisconnecting">Errore di connessione</string>
+    <string name="msgAlreadyConnected">Già connesso</string>
+    <string name="msgConnectionLostTryingToReconnect">Connessione persa, tentativo di riconnessione...</string>
+    <string name="msgConnectionErrorTryingToReconnect">Errore di connessione, tentativo di riconnessione...</string>
+</resources>

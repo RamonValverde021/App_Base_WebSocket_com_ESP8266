@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cores do sistema -->
+    <attr name="colorMainScreen" format="color" />
+    <attr name="colorText" format="color" />
+
+    <!-- Cores botão padrao -->
+    <attr name="clrStdBtn_Border" format="color"/>
+    <attr name="clrStdBtn_Background" format="color"/>
+    <attr name="clrStdBtn_Text" format="color"/>
+
+    <!-- Cores borda scrollView -->
+    <attr name="clrScrViw_Border" format="color"/>
+
+</resources>
