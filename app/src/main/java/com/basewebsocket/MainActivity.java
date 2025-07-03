@@ -4,11 +4,14 @@ import android.os.Bundle;
 
 import com.basewebsocket.model.json_enviar.JsonEnviar;
 import com.google.gson.Gson;
+
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     private URI uri;
     private MeuWebSocket socket;
-    private TextView status;
+    private TextView serial, status;
+    private EditText mensagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,62 +39,78 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        serial = findViewById(R.id.lblSerial);
         status = findViewById(R.id.lblStatus);
+        mensagem = findViewById(R.id.txtMensageText);
 
         try {
             uri = new URI("ws://192.168.0.130:2450/"); // Certifique-se que é a porta certa!
-            socket = new MeuWebSocket(uri, this); // passando a Activity agora usando a variável global
+            socket = new MeuWebSocket(uri, this);  // passando a Activity agora usando a variável global
             socket.connect();
+            // Se o app iniciar primeiro que o ESP, então ele tenta conectar automaticamente
+            if (socket == null || !socket.isOpen()) reconnectWebSocket();
         } catch (Exception e) {
             e.printStackTrace();
-            Log.e("testeWebSocket", "Erro ao conectar: " + e.getMessage());
+            status.setText(getString(R.string.msgErrorConnecting));
+            Log.d("debugWebSocket", "Falha ao conectar...");
         }
     }
 
-    int repeticoes = 0; // Inicia um contador de vezes que se reconectou automaticamente
-    // Função para reconectar automaticamente co ESP8266
-    protected void reconectarWebSocket() {
-        if(repeticoes < 3) { // Se o app ja se reconectou automaticamente 10 vezes
-            Log.d("WebSocket", "Tentando reconectar..."); // Escreve no Logcat que a tentativa de reconexão começou (útil para debug)
+    // Função para reconectar automaticamente ao ESP8266 em caso de desconexão de ambos os lados
+    protected void reconnectWebSocket() {
+        if (socket != null && socket.isOpen()) return; // Antes de tentar sair reconectando, verifica antes e sai da função por aqui mesmo se já estiver conectado
 
-            // Cria um atraso de 3000ms (3 segundos) antes de executar o código dentro
-            // Isso evita tentar reconectar imediatamente, dando tempo para o ESP se estabilizar
-            new Handler(Looper.getMainLooper()).postDelayed(() -> {
-                try {
-                    // Verifica se o socket já existe e está conectado
-                    if (socket != null && socket.isOpen()) {               // Se estiver, não faz nada (evita reconexões desnecessárias)
-                        status.setText(getString(R.string.msgAppConnected));
-                        return;                                            // Sai do método se já estiver conectado
-                    }
-
-                    // Se não estiver conectado, cria uma nova instância do WebSocket
-                    socket = new MeuWebSocket(uri, MainActivity.this); // Passando o endereço do ESP (uri) e a Activity atual (this)
-                    socket.connect();                                         // Inicia a tentativa de conexão com o servidor WebSocket
-                } catch (
-                        Exception e) {                                       // Se algo der errado (ex: URI inválido, falha de rede...), captura a exceção
-                    e.printStackTrace();                                      // Imprime os detalhes do erro no Logcat
-                    status.setText(getString(R.string.msgFailReconnect));                    // Atualiza a interface para informar que a reconexão falhou
+        Log.d("debugWebSocket", "Tentando reconectar..."); // Escreve no Logcat que a tentativa de reconexão começou (útil para debug)
+        // Cria um atraso de 3000ms (3 segundos) antes de executar o código dentro
+        // Isso evita tentar reconectar imediatamente, dando tempo para o ESP se estabilizar
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            try {
+                if (socket != null && socket.isOpen()) {                       // Se o WebSocket estiver conectado, não faz nada (evita reconexões desnecessárias)
+                    status.setText(getString(R.string.msgAppConnected));       // Exibe um mensagem indicando app conectado
+                } else {                                                       // Se não estiver conectado, cria uma nova instância do WebSocket
+                    socket = new MeuWebSocket(uri, MainActivity.this);  // Passando o endereço do ESP (uri) e a Activity atual (this)
+                    socket.connect();                                          // Inicia a tentativa de conexão com o servidor WebSocket
                 }
-            }, 3000); // Tempo de espera antes da tentativa de reconexão: 3000 milissegundos (3 segundos)
-            repeticoes++; // Incrementa o contador ao final de cada reconexão
-        }
+            } catch (Exception e) {                                       // Se algo der errado (ex: URI inválido, falha de rede...), captura a exceção
+                e.printStackTrace();                                      // Imprime os detalhes do erro no Logcat
+                status.setText(getString(R.string.msgFailReconnect));                    // Atualiza a interface para informar que a reconexão falhou
+            }
+            reconnectWebSocket(); // ⚠️ Aqui o pulo do gato: Repete a reconexão automaticamente com pausas de 3 segundos do Handler
+        }, 3000); // Tempo de espera antes da tentativa de reconexão: 3000 milissegundos (3 segundos)
     }
-
 
     //-------------------------------- BOTÕES DA INTERFACE --------------------------------//
 
     // Botão de teste de enviar mensagem
-    public void testar(View view) {
+    public void sendJSON(View view) {
         Gson gson = new Gson();
         JsonEnviar comando = new JsonEnviar("LightFy", "Acionamento");
         String json = gson.toJson(comando);
-        if (socket != null && socket.isOpen()) {
+        if (socket != null && socket.isOpen()) { // Verifica se o websocket esta conectado
             socket.send(json);
         } else {
-            status.setText(getString(R.string.msgSocketNotOpenYet));
+            Toast.makeText(getApplicationContext(), getString(R.string.msgWebSocketConnectionIsNotActive), Toast.LENGTH_SHORT).show();
         }
     }
 
+    // Botão de enviar mensagem JSON ao ESP8266
+    public void sendText(View view) {
+        String text = mensagem.getText().toString(); // Pega o texto de EditText e converte para string
+        if (socket != null && socket.isOpen()) {     // Verifica se o websocket esta conectado
+            if (!text.trim().isEmpty()) {            // Verifica se a mensagem não está vazia
+                socket.send(text);                   // ✅ Pode enviar normalmente
+            } else {
+                Toast.makeText(getApplicationContext(), getString(R.string.msgEmptyField), Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(getApplicationContext(), getString(R.string.msgWebSocketConnectionIsNotActive), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // Botão limpara dados da Serial
+    public void limparSerial(View view) {
+        serial.setText("");
+    }
 
     // Botão de desconectar
     public void desconectar(View view) {
@@ -112,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             if (socket != null && socket.isOpen()) {                    // Verifica se o socket já está conectado
                 status.setText(getString(R.string.msgAlreadyConnected));
-                return;                                                 // Sai do método se já estiver conectado
+                return;                                                 // Sai do metodo se já estiver conectado
             }
             // Basicamente repetindo a conexão automatica no onCreate
             socket = new MeuWebSocket(uri, MainActivity.this);  // Cria a instância do WebSocket passando o endereço e o contexto da Activity

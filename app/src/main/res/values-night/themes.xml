@@ -5,11 +5,12 @@
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
         <item name="colorMainScreen">@color/darkGrayHard</item>
         <item name="colorText">@color/white</item>
-        <item name="clrScrViw_Border">@color/white</item>
+        <item name="clrScrViw_Border">@color/greenCode</item>
 
         <item name="clrStdBtn_Border">@color/white</item>
-        <item name="clrStdBtn_Background">@color/blueFacebook</item>
+        <item name="clrStdBtn_Background">@color/greenCode</item>
         <item name="clrStdBtn_Text">@color/white</item>
+
     </style>
 
 </resources>

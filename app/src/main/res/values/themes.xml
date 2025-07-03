@@ -10,6 +10,7 @@
         <item name="clrStdBtn_Border">@color/blueFacebook</item>
         <item name="clrStdBtn_Background">@color/white</item>
         <item name="clrStdBtn_Text">@color/blueFacebook</item>
+
     </style>
 
     <style name="Theme.Base_Websocket" parent="Base.Theme.Base_Websocket" />

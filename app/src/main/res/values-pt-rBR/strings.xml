@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Base_Websocket</string>
-    <string name="btnTest">Teste</string>
+    <string name="app_name">Base Websocket</string>
+    <string name="btnSendJSON">Enviar JSON</string>
     <string name="btnDesconnect">Desconectar</string>
     <string name="lbTitleSerial">Serial</string>
     <string name="btnConnec">Conectar</string>
     <string name="msgAppConnected">Aplicativo Conectado!</string>
     <string name="msgFailReconnect">Falha ao reconectar</string>
-    <string name="msgSocketNotOpenYet">Socket não abriu ainda</string>
+    <string name="msgWebSocketConnectionIsNotActive">Conexão WebSocket não está ativa!</string>
     <string name="msgDisconnected">Desconectado</string>
     <string name="msgAlreadyDisconnect">Já está desconectado</string>
     <string name="msgConnecting">Conectando...</string>
@@ -16,4 +16,9 @@
     <string name="msgAlreadyConnected">Já conectado</string>
     <string name="msgConnectionLostTryingToReconnect">Conexão perdida, tentando reconectar...</string>
     <string name="msgConnectionErrorTryingToReconnect">Erro na conexão, tentando reconectar...</string>
+    <string name="btnCleanSerial">Limpar</string>
+    <string name="btnSendMensage">Enviar Mensagem</string>
+    <string name="txtMensageText">Digite sua mensagem</string>
+    <string name="msgEmptyField">Campo vazio! Digite uma mensagem</string>
+    <string name="msgFailedAfterMultipleAttempts">Falha após várias tentativas</string>
 </resources>

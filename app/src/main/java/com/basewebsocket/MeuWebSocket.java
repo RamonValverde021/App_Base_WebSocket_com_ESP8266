@@ -1,6 +1,7 @@
 package com.basewebsocket;
 
 import android.app.Activity; // Importa a classe Activity para podermos interagir com a interface do app
+import android.content.res.Configuration;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -32,10 +33,10 @@ public class MeuWebSocket extends WebSocketClient { // Essa é a classe personal
         serial = activity.findViewById(R.id.lblSerial); // Encontra o TextView com id lblSerial na tela
     }
 
-    // Método que é automaticamente chamado quando o WebSocket recebe uma mensagem do servidor (ESP8266)
+    // Metodo que é automaticamente chamado quando o WebSocket recebe uma mensagem do servidor (ESP8266)
     @Override
     public void onMessage(String message) {
-        Log.d("WebSocket", "Mensagem recebida: " + message); // Mostra no Logcat a mensagem recebida (útil para depuração)
+        Log.d("debugWebSocket", "WebSocket onMessage() \n    Message: " + message); // Mostra no Logcat a mensagem recebida (útil para depuração)
         // Como não podemos modificar a interface diretamente de uma thread de rede,
         // usamos runOnUiThread() para rodar esse código na thread principal (a da interface)
         activity.runOnUiThread(() -> {
@@ -50,6 +51,8 @@ public class MeuWebSocket extends WebSocketClient { // Essa é a classe personal
 
     @Override
     public void onOpen(ServerHandshake handshakedata) {
+        Log.i("debugWebSocket", "WebSocket onOpen() \n    Server Handshake: " + handshakedata);
+        send("Oi ESP!");  // Envia uma mensagem
         activity.runOnUiThread(() -> {
             ProgressBar iconeStatus = activity.findViewById(R.id.iconeStatus); // Pega o obejto do progressBar
             TextView status = activity.findViewById(R.id.lblStatus);           // Pega o obejto do textView status
@@ -57,30 +60,31 @@ public class MeuWebSocket extends WebSocketClient { // Essa é a classe personal
             status.setVisibility(View.VISIBLE);                                // exibe o textView do status
             status.setText(activity.getString(R.string.msgAppConnected));      // exibe a mensagem de status que o app conectou
         });
-        Log.d("WebSocket", "Conexão aberta");
-        send("Oi ESP!");  // Envia uma mensagem
     }
 
     @Override
     public void onClose(int code, String reason, boolean remote) {
-        Log.d("WebSocket", "Conexão fechada: " + reason);
+        Log.w("debugWebSocket", "WebSocket onClose() \n    Code: " + code + "\n    Reason: " + reason + "\n    Remote: " + remote);
         activity.runOnUiThread(() -> {
             status.setText(activity.getString(R.string.msgConnectionLostTryingToReconnect));
-            ((MainActivity) activity).reconectarWebSocket();  // chama a reconexão
+            if (code != -1) {
+                Log.v("debugWebSocket", "WebSocket onClose() \n    Chamando reconectarWebSocket()");
+                ((MainActivity) activity).reconnectWebSocket();  // chama a reconexão
+            }
         });
     }
 
     @Override
     public void onError(Exception ex) {
-        Log.e("WebSocket", "Erro de conexão: ", ex);
+        Log.e("debugWebSocket", "WebSocket onError() \n    Exception: " + ex);
         activity.runOnUiThread(() -> {
             status.setText(activity.getString(R.string.msgConnectionErrorTryingToReconnect));
-            ((MainActivity) activity).reconectarWebSocket();  // reconecta no erro também
         });
     }
 
 
     public void statusLed(String mensagemJson) {
+        int nightModeFlags = activity.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK; // Identica o tema do Smartphone, se está no modo claro ou escuro
         try {
             Gson gson = new Gson();
             JsonReceber mensagem = gson.fromJson(mensagemJson, JsonReceber.class);
@@ -94,7 +98,11 @@ public class MeuWebSocket extends WebSocketClient { // Essa é a classe personal
                 ImageView led = activity.findViewById(R.id.imgLed);
                 if ("LightFy".equals(id) && "Status".equals(designacao)) {
                     if ("Ligada".equals(sensor.trim())) {
-                        led.setImageResource(R.drawable.led_azul);
+                        if (nightModeFlags == Configuration.UI_MODE_NIGHT_NO) { // Se o smartphone estiver no modo claro
+                            led.setImageResource(R.drawable.led_azul);
+                        } else if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES) { // Se o smartphone estiver no modo escuro
+                            led.setImageResource(R.drawable.led_verde);
+                        }
                     } else {
                         led.setImageResource(R.drawable.led_transparente);
                     }

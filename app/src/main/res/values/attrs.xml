@@ -11,5 +11,4 @@
 
     <!-- Cores borda scrollView -->
     <attr name="clrScrViw_Border" format="color"/>
-
 </resources>
