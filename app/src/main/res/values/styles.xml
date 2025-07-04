@@ -22,5 +22,18 @@
         <item name="strokeWidth">3dp</item>                              <!-- Largura da borda -->
     </style>
 
+    <!-- Botões da Tela de Configuração do Wi-Fi  -->
+    <style name="btnConfigWiFi" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">?attr/clrBtnConfig_Border</item>           <!-- Cor da borda -->
+        <item name="backgroundTint">?attr/clrBtnConfig_Background</item>    <!-- Cor de fundo -->
+        <item name="android:textColor">?attr/clrBtnConfig_Text</item>       <!-- Cor do texto -->
+        <item name="android:textStyle">bold</item>                       <!-- Texto em Negrito -->
+        <item name="android:textSize">24sp</item>                        <!-- Tamanho do texto -->
+        <item name="cornerRadius">14dp</item>                            <!-- Cantos arredondados -->
+        <item name="strokeWidth">3dp</item>                              <!-- Largura da borda -->
+        <item name="android:layout_marginLeft">10dp</item>                <!-- Margem esquerda -->
+        <item name="android:layout_marginRight">10dp</item>               <!-- Margem direita -->
+    </style>
+
 
 </resources>

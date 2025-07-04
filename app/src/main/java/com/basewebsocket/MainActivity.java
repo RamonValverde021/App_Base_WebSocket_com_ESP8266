@@ -58,25 +58,29 @@ public class MainActivity extends AppCompatActivity {
 
     // Função para reconectar automaticamente ao ESP8266 em caso de desconexão de ambos os lados
     protected void reconnectWebSocket() {
-        if (socket != null && socket.isOpen()) return; // Antes de tentar sair reconectando, verifica antes e sai da função por aqui mesmo se já estiver conectado
-
-        Log.d("debugWebSocket", "Tentando reconectar..."); // Escreve no Logcat que a tentativa de reconexão começou (útil para debug)
-        // Cria um atraso de 3000ms (3 segundos) antes de executar o código dentro
-        // Isso evita tentar reconectar imediatamente, dando tempo para o ESP se estabilizar
-        new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            try {
-                if (socket != null && socket.isOpen()) {                       // Se o WebSocket estiver conectado, não faz nada (evita reconexões desnecessárias)
-                    status.setText(getString(R.string.msgAppConnected));       // Exibe um mensagem indicando app conectado
-                } else {                                                       // Se não estiver conectado, cria uma nova instância do WebSocket
-                    socket = new MeuWebSocket(uri, MainActivity.this);  // Passando o endereço do ESP (uri) e a Activity atual (this)
-                    socket.connect();                                          // Inicia a tentativa de conexão com o servidor WebSocket
+        // Antes de tentar sair reconectando, verifica antes e sai da função por aqui mesmo se já estiver conectado
+        if (socket != null && socket.isOpen()){
+            Log.d("debugWebSocket", "Já conectado!");
+        } else {
+            Log.d("debugWebSocket", "Tentando reconectar..."); // Escreve no Logcat que a tentativa de reconexão começou (útil para debug)
+            // Cria um atraso de 3000ms (3 segundos) antes de executar o código dentro
+            // Isso evita tentar reconectar imediatamente, dando tempo para o ESP se estabilizar
+            new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                try {
+                    if (socket != null && socket.isOpen()) {                       // Se o WebSocket estiver conectado, não faz nada (evita reconexões desnecessárias)
+                        status.setText(getString(R.string.msgAppConnected));       // Exibe um mensagem indicando app conectado
+                    } else {                                                       // Se não estiver conectado, cria uma nova instância do WebSocket
+                        socket = new MeuWebSocket(uri, MainActivity.this);  // Passando o endereço do ESP (uri) e a Activity atual (this)
+                        socket.connect();                                          // Inicia a tentativa de conexão com o servidor WebSocket
+                    }
+                } catch (
+                        Exception e) {                                       // Se algo der errado (ex: URI inválido, falha de rede...), captura a exceção
+                    e.printStackTrace();                                      // Imprime os detalhes do erro no Logcat
+                    status.setText(getString(R.string.msgFailReconnect));                    // Atualiza a interface para informar que a reconexão falhou
                 }
-            } catch (Exception e) {                                       // Se algo der errado (ex: URI inválido, falha de rede...), captura a exceção
-                e.printStackTrace();                                      // Imprime os detalhes do erro no Logcat
-                status.setText(getString(R.string.msgFailReconnect));                    // Atualiza a interface para informar que a reconexão falhou
-            }
-            reconnectWebSocket(); // ⚠️ Aqui o pulo do gato: Repete a reconexão automaticamente com pausas de 3 segundos do Handler
-        }, 3000); // Tempo de espera antes da tentativa de reconexão: 3000 milissegundos (3 segundos)
+                reconnectWebSocket(); // ⚠️ Aqui o pulo do gato: Repete a reconexão automaticamente com pausas de 3 segundos do Handler
+            }, 3000); // Tempo de espera antes da tentativa de reconexão: 3000 milissegundos (3 segundos)
+        }
     }
 
     //-------------------------------- BOTÕES DA INTERFACE --------------------------------//

@@ -11,4 +11,9 @@
 
     <!-- Cores borda scrollView -->
     <attr name="clrScrViw_Border" format="color"/>
+
+    <!-- Cores botão configuração wifi -->
+    <attr name="clrBtnConfig_Border" format="color"/>
+    <attr name="clrBtnConfig_Background" format="color"/>
+    <attr name="clrBtnConfig_Text" format="color"/>
 </resources>
