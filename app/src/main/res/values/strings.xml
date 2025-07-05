@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Base Websocket</string>
     <string name="btnSendJSON">Send JSON</string>
-    <string name="btnConnec">Connect</string>
+    <string name="btnConnect">Connect</string>
     <string name="btnDesconnect">Desconnect</string>
-    <string name="lbTitleSerial">Serial</string>
+    <string name="tltSerial">Serial</string>
     <string name="msgAppConnected">Application Connected!</string>
     <string name="msgFailReconnect">Failed to reconnect</string>
     <string name="msgWebSocketConnectionIsNotActive">WebSocket connection is not active!</string>
@@ -20,15 +20,14 @@
     <string name="txtMensageText">Enter your message</string>
     <string name="msgEmptyField">Empty field! Enter a message</string>
     <string name="msgFailedAfterMultipleAttempts">Failed after multiple attempts</string>
-    <string name="title_activity_teste">teste</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="tltSETTINGS">SETTINGS:</string>
+    <string name="tltConfigureDevice">Configure Device</string>
+    <string name="tltWiFiNetworkSSID">Wi-Fi Network (SSID):</string>
+    <string name="tltPassword">Password:</string>
+    <string name="tltIPAddress">IP Address:</string>
+    <string name="tltSubnetMask">Subnet Mask:</string>
+    <string name="tltDefaultGateway">Default Gateway:</string>
+    <string name="tltDNS">DNS:</string>
+    <string name="hntMyWiFiAddress">My Wi-Fi address...</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
 </resources>

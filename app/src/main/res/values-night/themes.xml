@@ -3,13 +3,27 @@
     <style name="Base.Theme.Base_Websocket" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+        <!-- Cores do sistema -->
         <item name="colorMainScreen">@color/darkGrayHard</item>
         <item name="colorText">@color/white</item>
         <item name="clrScrViw_Border">@color/greenCode</item>
 
+        <!-- Cores botão padrão -->
         <item name="clrStdBtn_Border">@color/white</item>
         <item name="clrStdBtn_Background">@color/greenCode</item>
         <item name="clrStdBtn_Text">@color/white</item>
+
+        <!-- Cores botão configuração wifi -->
+        <item name="clrBtnConfig_Border">@color/white</item>
+        <item name="clrBtnConfig_Background">@color/darkGrayHard</item>
+        <item name="clrBtnConfig_Text">@color/white</item>
+
+        <!-- Cor label configuração wifi -->
+        <item name="clrLblConfigWiFi">@color/greenCode</item>
+
+        <!-- Cor EditText configuração wifi -->
+        <item name="clrTxtConfigWiFi">@color/white</item>
 
     </style>
 

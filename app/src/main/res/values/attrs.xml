@@ -16,4 +16,11 @@
     <attr name="clrBtnConfig_Border" format="color"/>
     <attr name="clrBtnConfig_Background" format="color"/>
     <attr name="clrBtnConfig_Text" format="color"/>
+
+    <!-- Cor label configuração wifi -->
+    <attr name="clrLblConfigWiFi" format="color"/>
+
+    <!-- EditText Configuração Wi-Fi  -->
+    <attr name="clrTxtConfigWiFi" format="color"/>
+
 </resources>

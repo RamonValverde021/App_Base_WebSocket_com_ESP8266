@@ -3,8 +3,8 @@
     <string name="app_name">Base Websocket</string>
     <string name="btnSendJSON">Enviar JSON</string>
     <string name="btnDesconnect">Desconectar</string>
-    <string name="lbTitleSerial">Serial</string>
-    <string name="btnConnec">Conectar</string>
+    <string name="tltSerial">Serial</string>
+    <string name="btnConnect">Conectar</string>
     <string name="msgAppConnected">Aplicativo Conectado!</string>
     <string name="msgFailReconnect">Falha ao reconectar</string>
     <string name="msgWebSocketConnectionIsNotActive">Conexão WebSocket não está ativa!</string>
@@ -21,4 +21,13 @@
     <string name="txtMensageText">Digite sua mensagem</string>
     <string name="msgEmptyField">Campo vazio! Digite uma mensagem</string>
     <string name="msgFailedAfterMultipleAttempts">Falha após várias tentativas</string>
+    <string name="tltSETTINGS">CONFIGURAÇÕES:</string>
+    <string name="tltConfigureDevice">Configurar Dispositivo</string>
+    <string name="tltWiFiNetworkSSID">Rede Wi-Fi (SSID):</string>
+    <string name="tltPassword">Senha:</string>
+    <string name="tltIPAddress">Endreço IP:</string>
+    <string name="tltSubnetMask">Máscara de Sub-Rede:</string>
+    <string name="tltDefaultGateway">Gateway Padrão:</string>
+    <string name="tltDNS">DNS:</string>
+    <string name="hntMyWiFiAddress">Meu endereço Wi-Fi...</string>
 </resources>

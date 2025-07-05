@@ -3,28 +3,28 @@
     <style name="Base.Theme.Base_Websocket" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Cores do sistema -->
         <item name="colorMainScreen">@color/white</item>
         <item name="colorText">@color/darkGray</item>
         <item name="clrScrViw_Border">@color/blueFacebook</item>
 
+        <!-- Cores botão padrão -->
         <item name="clrStdBtn_Border">@color/blueFacebook</item>
         <item name="clrStdBtn_Background">@color/white</item>
         <item name="clrStdBtn_Text">@color/blueFacebook</item>
 
-
+        <!-- Cores botão configuração wifi -->
         <item name="clrBtnConfig_Border">@color/darkGray</item>
-        <item name="clrBtnConfig_Background">@color/lightGray</item>
+        <item name="clrBtnConfig_Background">@color/white</item>
         <item name="clrBtnConfig_Text">@color/darkGray</item>
 
-    </style>
+        <!-- Cor label configuração wifi -->
+        <item name="clrLblConfigWiFi">@color/blueLabelConfigWiFi</item>
 
+        <!-- Cor EditText configuração wifi -->
+        <item name="clrTxtConfigWiFi">@color/darkGray</item>
+
+    </style>
     <style name="Theme.Base_Websocket" parent="Base.Theme.Base_Websocket" />
-    <style name="Theme.Base_Websocket.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-    <style name="Theme.Base_Websocket.AppBarOverlay"
-        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="Theme.Base_Websocket.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
 </resources>

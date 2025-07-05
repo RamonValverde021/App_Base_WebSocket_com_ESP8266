@@ -5,67 +5,114 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_02"
     tools:context=".ConfigurationWiFi">
 
     <TextView
-        android:id="@+id/lblIP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ip"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="341dp" />
-
-    <TextView
-        android:id="@+id/lblPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Senha"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="251dp" />
-
-    <TextView
+        android:textColor="?attr/colorText"
         android:id="@+id/tltConfigurations"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Configurações"
+        android:text="@string/tltSETTINGS"
+        android:textSize="34sp"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
-
-    <TextView
-        android:id="@+id/tltConfigDevice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Configurar Dispositivo"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="53dp" />
 
     <Button
         android:id="@+id/btnConnect"
         style="@style/btnConfigWiFi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Conectar"
-        tools:layout_editor_absoluteX="14dp"
-        tools:layout_editor_absoluteY="89dp" />
+        android:text="@string/btnConnect"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="148dp" />
 
     <TextView
-        android:id="@+id/lblSSID"
+        android:textColor="?attr/colorText"
+        android:id="@+id/tltConfigDevice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SSID"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="155dp" />
+        android:text="@string/tltConfigureDevice"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="86dp" />
 
     <EditText
-        android:id="@+id/txtSSID"
+        android:id="@+id/editTextNumber5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
-        android:text="Name"
+        android:hint="8.8.8.8"
+        android:inputType="number"
         tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="189dp" />
+        tools:layout_editor_absoluteY="865dp" />
+
+    <TextView
+        style="@style/lblConfigWiFi"
+        android:id="@+id/lblIP5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tltDNS"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="833dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="255.255.255.0"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="777dp" />
+
+    <TextView
+        style="@style/lblConfigWiFi"
+        android:id="@+id/lblIP3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tltSubnetMask"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="745dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="192.168.0.1"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="671dp" />
+
+    <TextView
+        style="@style/lblConfigWiFi"
+        android:id="@+id/lblIP4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tltDefaultGateway"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="639dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="192.168.0.130"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="567dp" />
+
+    <TextView
+        style="@style/lblConfigWiFi"
+        android:id="@+id/lblIP2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tltIPAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="535dp" />
 
     <EditText
         android:id="@+id/txtPassword"
@@ -73,16 +120,37 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="279dp" />
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="476dp" />
+
+    <TextView
+        style="@style/lblConfigWiFi"
+        android:id="@+id/lblPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tltPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="448dp" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        style="@style/txtConfigWiFi"
+        android:id="@+id/txtSSID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="number"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="373dp" />
+        android:hint="@string/hntMyWiFiAddress"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="270dp" />
+
+    <TextView
+        android:id="@+id/lblSSID"
+        style="@style/lblConfigWiFi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/tltWiFiNetworkSSID"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="222dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

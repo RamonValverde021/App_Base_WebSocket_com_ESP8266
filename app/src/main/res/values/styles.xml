@@ -35,5 +35,17 @@
         <item name="android:layout_marginRight">10dp</item>               <!-- Margem direita -->
     </style>
 
+    <!-- Labels Configuração Wi-Fi  -->
+    <style name="lblConfigWiFi" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="android:textColor">?attr/clrLblConfigWiFi</item>       <!-- Cor do texto -->
+        <item name="android:textSize">16sp</item>                        <!-- Tamanho do texto -->
+    </style>
+
+    <!-- EditText Configuração Wi-Fi  -->
+    <style name="txtConfigWiFi" parent="Widget.Material3.TextInputEditText.FilledBox">
+        <item name="android:textColor">?attr/clrTxtConfigWiFi</item>       <!-- Cor do texto -->
+        <item name="android:textSize">24sp</item>                        <!-- Tamanho do texto -->
+    </style>
+
 
 </resources>
