@@ -6,7 +6,8 @@
         <item name="backgroundTint">?attr/clrStdBtn_Background</item>    <!-- Cor de fundo -->
         <item name="android:textColor">?attr/clrStdBtn_Text</item>       <!-- Cor do texto -->
         <item name="android:textSize">24sp</item>                        <!-- Tamanho do texto -->
-        <item name="cornerRadius">22dp</item>                            <!-- Cantos arredondados -->
+        <item name="cornerRadius">22dp
+        </item>                            <!-- Cantos arredondados -->
         <item name="strokeWidth">3dp</item>                              <!-- Largura da borda -->
         <item name="android:layout_marginLeft">10dp</item>                <!-- Margem esquerda -->
         <item name="android:layout_marginRight">10dp</item>               <!-- Margem direita -->
@@ -18,7 +19,8 @@
         <item name="android:textColor">?attr/clrStdBtn_Text</item>       <!-- Cor do texto -->
         <item name="android:textStyle">bold</item>                       <!-- Texto em Negrito -->
         <item name="android:textSize">16sp</item>                        <!-- Tamanho do texto -->
-        <item name="cornerRadius">20dp</item>                            <!-- Cantos arredondados -->
+        <item name="cornerRadius">20dp
+        </item>                            <!-- Cantos arredondados -->
         <item name="strokeWidth">3dp</item>                              <!-- Largura da borda -->
     </style>
 
@@ -27,25 +29,26 @@
         <item name="strokeColor">?attr/clrBtnConfig_Border</item>           <!-- Cor da borda -->
         <item name="backgroundTint">?attr/clrBtnConfig_Background</item>    <!-- Cor de fundo -->
         <item name="android:textColor">?attr/clrBtnConfig_Text</item>       <!-- Cor do texto -->
-        <item name="android:textStyle">bold</item>                       <!-- Texto em Negrito -->
-        <item name="android:textSize">24sp</item>                        <!-- Tamanho do texto -->
-        <item name="cornerRadius">14dp</item>                            <!-- Cantos arredondados -->
-        <item name="strokeWidth">3dp</item>                              <!-- Largura da borda -->
-        <item name="android:layout_marginLeft">10dp</item>                <!-- Margem esquerda -->
-        <item name="android:layout_marginRight">10dp</item>               <!-- Margem direita -->
+        <item name="android:textSize">18sp</item>                        <!-- Tamanho do texto -->
+        <item name="cornerRadius">16dp</item>                            <!-- Cantos arredondados -->
+        <item name="strokeWidth">2dp</item>                              <!-- Largura da borda -->
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
     </style>
 
     <!-- Labels Configuração Wi-Fi  -->
     <style name="lblConfigWiFi" parent="Widget.Material3.TextInputLayout.FilledBox">
         <item name="android:textColor">?attr/clrLblConfigWiFi</item>       <!-- Cor do texto -->
-        <item name="android:textSize">16sp</item>                        <!-- Tamanho do texto -->
+        <item name="android:textSize">16sp</item>                          <!-- Tamanho do texto -->
     </style>
 
     <!-- EditText Configuração Wi-Fi  -->
-    <style name="txtConfigWiFi" parent="Widget.Material3.TextInputEditText.FilledBox">
-        <item name="android:textColor">?attr/clrTxtConfigWiFi</item>       <!-- Cor do texto -->
-        <item name="android:textSize">24sp</item>                        <!-- Tamanho do texto -->
+    <style name="txtConfigWiFi">
+        <item name="android:textColor">?attr/colorText</item>        <!-- Cor do texto -->
+        <item name="android:textSize">20sp</item>                    <!-- Tamanho do texto -->
+        <item name="android:textColorHint">?attr/colorHint</item>    <!-- Cor leve do texto -->
+        <item name="android:backgroundTint">?attr/colorHint</item>   <!-- Cor leve do sublinhado -->
     </style>
-
-
 </resources>

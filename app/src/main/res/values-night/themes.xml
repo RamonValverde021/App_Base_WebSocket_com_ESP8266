@@ -7,11 +7,12 @@
         <!-- Cores do sistema -->
         <item name="colorMainScreen">@color/darkGrayHard</item>
         <item name="colorText">@color/white</item>
-        <item name="clrScrViw_Border">@color/greenCode</item>
+        <item name="colorHint">@color/white</item>
+        <item name="clrScrViw_Border">@color/green_system</item>
 
         <!-- Cores botão padrão -->
         <item name="clrStdBtn_Border">@color/white</item>
-        <item name="clrStdBtn_Background">@color/greenCode</item>
+        <item name="clrStdBtn_Background">@color/green_system</item>
         <item name="clrStdBtn_Text">@color/white</item>
 
         <!-- Cores botão configuração wifi -->
@@ -20,10 +21,7 @@
         <item name="clrBtnConfig_Text">@color/white</item>
 
         <!-- Cor label configuração wifi -->
-        <item name="clrLblConfigWiFi">@color/greenCode</item>
-
-        <!-- Cor EditText configuração wifi -->
-        <item name="clrTxtConfigWiFi">@color/white</item>
+        <item name="clrLblConfigWiFi">@color/green_system</item>
 
     </style>
 

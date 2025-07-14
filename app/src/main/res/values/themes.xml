@@ -7,12 +7,13 @@
         <!-- Cores do sistema -->
         <item name="colorMainScreen">@color/white</item>
         <item name="colorText">@color/darkGray</item>
-        <item name="clrScrViw_Border">@color/blueFacebook</item>
+        <item name="colorHint">@color/lightGray</item>
+        <item name="clrScrViw_Border">@color/blue_system</item>
 
         <!-- Cores botão padrão -->
-        <item name="clrStdBtn_Border">@color/blueFacebook</item>
+        <item name="clrStdBtn_Border">@color/blue_system</item>
         <item name="clrStdBtn_Background">@color/white</item>
-        <item name="clrStdBtn_Text">@color/blueFacebook</item>
+        <item name="clrStdBtn_Text">@color/blue_system</item>
 
         <!-- Cores botão configuração wifi -->
         <item name="clrBtnConfig_Border">@color/darkGray</item>
@@ -20,10 +21,7 @@
         <item name="clrBtnConfig_Text">@color/darkGray</item>
 
         <!-- Cor label configuração wifi -->
-        <item name="clrLblConfigWiFi">@color/blueLabelConfigWiFi</item>
-
-        <!-- Cor EditText configuração wifi -->
-        <item name="clrTxtConfigWiFi">@color/darkGray</item>
+        <item name="clrLblConfigWiFi">@color/blue_system</item>
 
     </style>
     <style name="Theme.Base_Websocket" parent="Base.Theme.Base_Websocket" />

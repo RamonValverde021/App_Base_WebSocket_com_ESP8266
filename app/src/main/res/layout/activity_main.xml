@@ -148,6 +148,7 @@
         app:layout_constraintEnd_toEndOf="@+id/scrollSerial" />
 
     <EditText
+        style="@style/txtConfigWiFi"
         android:id="@+id/txtMensageText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -157,7 +158,6 @@
         android:ems="10"
         android:hint="@string/txtMensageText"
         android:inputType="text"
-        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSendJSON" />
