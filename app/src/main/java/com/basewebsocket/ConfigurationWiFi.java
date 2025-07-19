@@ -1,6 +1,8 @@
 package com.basewebsocket;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +11,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class ConfigurationWiFi extends AppCompatActivity {
+
+    Intent tela;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +24,17 @@ public class ConfigurationWiFi extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        tela = new Intent(getApplicationContext(), MainActivity.class);
+    }
+
+    public void returnMain(View view) {
+        startActivity(tela);
+    }
+
+    public void saveConfig(View view) {
+    }
+
+    public void lookPassword(View view) {
     }
 }

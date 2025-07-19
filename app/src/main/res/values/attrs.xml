@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Cores do sistema -->
-    <attr name="colorMainScreen" format="color" />
-    <attr name="colorText" format="color" />
-    <attr name="colorHint" format="color"/>
+    <attr name="clrMainScreen" format="color" />
+    <attr name="clrText" format="color" />
+    <attr name="clrHint" format="color"/>
 
     <!-- Cores botão padrao -->
     <attr name="clrStdBtn_Border" format="color"/>
@@ -20,5 +20,8 @@
 
     <!-- Cor Label da EditText configuração wifi -->
     <attr name="clrLblConfigWiFi" format="color"/>
+
+    <!-- Cor do painel dos dados wi-fi -->
+    <attr name="clrPanelConfigWiFi" format="color"/>
 
 </resources>

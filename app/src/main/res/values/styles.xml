@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- _______________________________ TELA PRINCIPAL _______________________________ -->
+
     <style name="standardButton" parent="Widget.Material3.Button.OutlinedButton">
         <item name="strokeColor">?attr/clrStdBtn_Border</item>           <!-- Cor da borda -->
         <item name="backgroundTint">?attr/clrStdBtn_Background</item>    <!-- Cor de fundo -->
@@ -24,31 +26,88 @@
         <item name="strokeWidth">3dp</item>                              <!-- Largura da borda -->
     </style>
 
-    <!-- Botões da Tela de Configuração do Wi-Fi  -->
+    <!-- Labels Configuração -->
+    <style name="lblSendMessage" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="android:textColor">?attr/clrLblConfigWiFi</item>       <!-- Cor do texto -->
+        <item name="android:textSize">16sp</item>                          <!-- Tamanho do texto -->
+    </style>
+
+    <!-- EditText Configuração -->
+    <style name="txtSendMessage">
+        <item name="android:textColor">?attr/clrText</item>        <!-- Cor do texto -->
+        <item name="android:textSize">20sp</item>                    <!-- Tamanho do texto -->
+        <item name="android:textColorHint">?attr/clrHint</item>    <!-- Cor leve do texto -->
+        <item name="android:backgroundTint">?attr/clrHint</item>   <!-- Cor leve do sublinhado -->
+    </style>
+
+
+    <!-- _______________________________ TELA DE CONFIGURAÇÃO WI-FI _______________________________ -->
+
+    <!-- EditText Configuração -->
+    <style name="txtConfigWiFi_Layout" parent="@style/Widget.Material3.TextInputLayout.FilledBox">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">?attr/clrLblConfigWiFi</item>
+        <item name="hintTextColor">?attr/clrLblConfigWiFi</item>
+        <item name="placeholderTextColor">?attr/clrHint</item>
+        <item name="boxStrokeColor">?attr/clrText</item>
+        <item name="cursorColor">?attr/clrText</item>
+        <item name="android:layout_marginBottom">30dp</item>
+    </style>
+
+    <style name="txtConfigWiFi_Edit">
+        <item name="android:textColor">?attr/clrText</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:backgroundTint">?attr/clrHint</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textColorHighlight">?attr/clrHint</item>
+        <item name="android:textSelectHandle">@drawable/select_handle_middle</item>
+        <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
+        <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
+    </style>
+
+    <!-- EditText Password Configuração -->
+    <style name="pswConfigWiFi_Layout" parent="@style/Widget.Material3.TextInputLayout.FilledBox">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">?attr/clrLblConfigWiFi</item>
+        <item name="hintTextColor">?attr/clrLblConfigWiFi</item>
+        <item name="placeholderTextColor">?attr/clrHint</item>
+        <item name="boxStrokeColor">?attr/clrText</item>
+        <item name="cursorColor">?attr/clrText</item>
+        <item name="endIconMode">password_toggle</item>
+        <item name="endIconTint">?attr/clrHint</item>
+        <item name="android:layout_marginBottom">30dp</item>
+    </style>
+
+    <style name="pswConfigWiFi_Edit">
+        <item name="android:textColor">?attr/clrText</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:backgroundTint">?attr/clrHint</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:textColorHighlight">?attr/clrHint</item>
+        <item name="android:textSelectHandle">@drawable/select_handle_middle</item>
+        <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
+        <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
+    </style>
+
+    <!-- Botões -->
     <style name="btnConfigWiFi" parent="Widget.Material3.Button.OutlinedButton">
         <item name="strokeColor">?attr/clrBtnConfig_Border</item>           <!-- Cor da borda -->
         <item name="backgroundTint">?attr/clrBtnConfig_Background</item>    <!-- Cor de fundo -->
         <item name="android:textColor">?attr/clrBtnConfig_Text</item>       <!-- Cor do texto -->
-        <item name="android:textSize">18sp</item>                        <!-- Tamanho do texto -->
-        <item name="cornerRadius">16dp</item>                            <!-- Cantos arredondados -->
-        <item name="strokeWidth">2dp</item>                              <!-- Largura da borda -->
+        <item name="android:textSize">20sp</item>                           <!-- Tamanho do texto -->
+        <item name="cornerRadius">20dp</item>                               <!-- Cantos arredondados -->
+        <item name="strokeWidth">2dp</item>                                 <!-- Largura da borda -->
         <item name="android:paddingBottom">0dp</item>
         <item name="android:paddingTop">0dp</item>
         <item name="android:paddingLeft">15dp</item>
         <item name="android:paddingRight">15dp</item>
     </style>
 
-    <!-- Labels Configuração Wi-Fi  -->
-    <style name="lblConfigWiFi" parent="Widget.Material3.TextInputLayout.FilledBox">
-        <item name="android:textColor">?attr/clrLblConfigWiFi</item>       <!-- Cor do texto -->
-        <item name="android:textSize">16sp</item>                          <!-- Tamanho do texto -->
-    </style>
-
-    <!-- EditText Configuração Wi-Fi  -->
-    <style name="txtConfigWiFi">
-        <item name="android:textColor">?attr/colorText</item>        <!-- Cor do texto -->
-        <item name="android:textSize">20sp</item>                    <!-- Tamanho do texto -->
-        <item name="android:textColorHint">?attr/colorHint</item>    <!-- Cor leve do texto -->
-        <item name="android:backgroundTint">?attr/colorHint</item>   <!-- Cor leve do sublinhado -->
-    </style>
 </resources>

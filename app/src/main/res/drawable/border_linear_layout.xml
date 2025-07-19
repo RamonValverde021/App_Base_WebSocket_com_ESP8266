@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- Cor de fundo azul -->
+    <solid android:color="?attr/clrPanelConfigWiFi"/> <!-- Cor definida em um atributo -->
+    <!-- Cantos arredondados -->
+    <corners android:radius="20dp" /> <!-- Pode ajustar o valor -->
+
+    <!-- <stroke android:width="2dp" android:color="?attr/clrBtnConfig_Border" /> Cria uma borda -->
+</shape>

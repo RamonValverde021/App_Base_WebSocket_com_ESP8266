@@ -16,7 +16,6 @@
     <string name="msgConnectionLostTryingToReconnect">Connection lost, trying to reconnect...</string>
     <string name="msgConnectionErrorTryingToReconnect">Connection error, trying to reconnect...</string>
     <string name="btnCleanSerial">Clean</string>
-    <string name="btnSendMensage">Send Mensage</string>
     <string name="txtMensageText">Enter your message</string>
     <string name="msgEmptyField">Empty field! Enter a message</string>
     <string name="msgFailedAfterMultipleAttempts">Failed after multiple attempts</string>
@@ -29,5 +28,8 @@
     <string name="tltDefaultGateway">Default Gateway:</string>
     <string name="tltDNS">DNS:</string>
     <string name="hntMyWiFiAddress">My Wi-Fi address...</string>
+    <string name="btnSaveConfig">Save</string>
+    <string name="hntMyWiFiPassword">Password my Wi-Fi...</string>
+    <string name="btnSendMessage">Send Message</string>
 
 </resources>

@@ -2,184 +2,169 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="?attr/colorMainScreen"
+    android:background="?attr/clrMainScreen"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ConfigurationWiFi">
 
-    <TextView
-        android:id="@+id/tltConfigurations"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:text="@string/tltSETTINGS"
-        android:textColor="?attr/colorText"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnConnect"
-        style="@style/btnConfigWiFi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/btnConnect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tltConfigDevice" />
-
-    <TextView
-        android:id="@+id/tltConfigDevice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/tltConfigureDevice"
-        android:textColor="?attr/colorText"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tltConfigurations" />
-
-    <TextView
-        android:id="@+id/lblPassword"
-        style="@style/lblConfigWiFi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/tltPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSSID" />
-
-    <TextView
-        android:id="@+id/lblIP5"
-        style="@style/lblConfigWiFi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/tltDNS"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber3" />
-
-    <EditText
-        android:id="@+id/editTextNumber3"
-        style="@style/txtConfigWiFi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:ems="10"
-        android:hint="255.255.255.0"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblIP3" />
-
-    <TextView
-        android:id="@+id/lblIP3"
-        style="@style/lblConfigWiFi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/tltSubnetMask"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber4" />
-
-    <EditText
-        android:id="@+id/editTextNumber4"
-        style="@style/txtConfigWiFi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:ems="10"
-        android:hint="192.168.0.1"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblIP4" />
-
-    <TextView
-        android:id="@+id/lblIP4"
-        style="@style/lblConfigWiFi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/tltDefaultGateway"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
-
-    <EditText
-        android:id="@+id/editTextNumber2"
-        style="@style/txtConfigWiFi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:ems="10"
-        android:hint="192.168.0.130"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblIP2" />
-
-    <TextView
-        android:id="@+id/lblIP2"
-        style="@style/lblConfigWiFi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/tltIPAddress"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
-
-    <EditText
-        android:id="@+id/txtPassword"
-        style="@style/txtConfigWiFi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:ems="10"
-        android:hint="*****"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblPassword" />
-
-    <EditText
-        android:id="@+id/editTextNumber5"
-        style="@style/txtConfigWiFi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:ems="10"
-        android:hint="8.8.8.8"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblIP5" />
-
-    <EditText
-        android:id="@+id/txtSSID"
-        style="@style/txtConfigWiFi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:ems="10"
-        android:hint="@string/hntMyWiFiAddress"
-        android:inputType="text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblSSID" />
-
-    <TextView
-        android:id="@+id/lblSSID"
-        style="@style/lblConfigWiFi"
+    <ScrollView
+        android:id="@+id/ScrollView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/tltWiFiNetworkSSID"
+        android:layout_height="0dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnConnect" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tltConfigurations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/tltSETTINGS"
+                    android:textColor="?attr/clrText"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tltConfigDevice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/tltConfigureDevice"
+                    android:textColor="?attr/clrText"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tltConfigurations" />
+
+                <Button
+                    android:id="@+id/btnConnect"
+                    style="@style/btnConfigWiFi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/btnConnect"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tltConfigDevice" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/border_linear_layout"
+                    android:gravity="top|left"
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="15dp"
+                    app:layout_constraintTop_toBottomOf="@+id/btnConnect">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/txtConfigWiFi_Layout"
+                        app:placeholderText="@string/hntMyWiFiAddress">
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/txtConfigWiFi_Edit"
+                            android:id="@+id/txtSSID"
+                            android:inputType="textAutoComplete"
+                            android:hint="@string/tltWiFiNetworkSSID"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/pswConfigWiFi_Layout"
+                        app:placeholderText="@string/hntMyWiFiPassword">
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/pswConfigWiFi_Edit"
+                            android:id="@+id/txtPassword"
+                            android:inputType="textPassword"
+                            android:hint="@string/tltPassword"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/txtConfigWiFi_Layout"
+                        app:placeholderText="192.168.0.130">
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/txtConfigWiFi_Edit"
+                            android:id="@+id/txtIPAddress"
+                            android:inputType="number|text"
+                            android:hint="@string/tltIPAddress"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/txtConfigWiFi_Layout"
+                        app:placeholderText="255.255.255.0">
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/txtConfigWiFi_Edit"
+                            android:id="@+id/txtSubnetMask"
+                            android:inputType="number|text"
+                            android:hint="@string/tltSubnetMask"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/txtConfigWiFi_Layout"
+                        app:placeholderText="192.168.0.1">
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/txtConfigWiFi_Edit"
+                            android:id="@+id/txtDefaultGateway"
+                            android:inputType="number|text"
+                            android:hint="@string/tltDefaultGateway"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/txtConfigWiFi_Layout"
+                        app:placeholderText="8.8.8.8">
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/txtConfigWiFi_Edit"
+                            android:id="@+id/txtDNS"
+                            android:inputType="number|text"
+                            android:hint="@string/tltDNS"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnSaveConfig"
+                    style="@style/btnConfigWiFi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:onClick="saveConfig"
+                    android:text="@string/btnSaveConfig"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+                <ImageView
+                    android:id="@+id/btnBackMain"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="returnMain"
+                    app:layout_constraintBottom_toBottomOf="@+id/tltConfigurations"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/arrow_back_screen" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

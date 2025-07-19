@@ -17,7 +17,6 @@
     <string name="msgConnectionLostTryingToReconnect">Connessione persa, tentativo di riconnessione...</string>
     <string name="msgConnectionErrorTryingToReconnect">Errore di connessione, tentativo di riconnessione...</string>
     <string name="btnCleanSerial">Cancella</string>
-    <string name="btnSendMensage">Invia messaggio</string>
     <string name="txtMensageText">Inserisci il tuo messaggio</string>
     <string name="msgEmptyField">Campo vuoto! Inserisci un messaggio</string>
     <string name="msgFailedAfterMultipleAttempts">Fallito dopo molteplici tentativi</string>
@@ -30,4 +29,7 @@
     <string name="tltDefaultGateway">Gateway predefinito:</string>
     <string name="tltDNS">DNS:</string>
     <string name="hntMyWiFiAddress">Il mio indirizzo Wi-Fi...</string>
+    <string name="btnSaveConfig">Salva</string>
+    <string name="hntMyWiFiPassword">La mia password Wi-Fi...</string>
+    <string name="btnSendMessage">Invia messaggio</string>
 </resources>

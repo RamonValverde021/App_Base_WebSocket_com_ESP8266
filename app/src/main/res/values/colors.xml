@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Cores Saturadas -->
-    <color name="black">#000000</color>
-    <color name="white">#FFFFFF</color>
-    <color name="red">#FF0000</color>
-    <color name="green">#00FF00</color>
-    <color name="blue">#0000FF</color>
+    <color name="BLACK">#000000</color>
+    <color name="WHITE">#FFFFFF</color>
+    <color name="RED">#FF0000</color>
+    <color name="LIME">#00FF00</color>
+    <color name="BLUE">#0000FF</color>
 
     <!-- Cores Nomeadas -->
-    <color name="black_system">#141118</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="black_system">#171719</color>
     <color name="white_system">#FEF7FF</color>
     <color name="blue_system">#377AFF</color>
     <color name="green_system">#009933</color>
