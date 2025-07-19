@@ -4,6 +4,9 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
+        <!-- Define uma fonte padrão para todo o aplicativo -->
+        <item name="fontFamily">@font/roboto</item>
+
         <!-- Cores do sistema -->
         <item name="clrMainScreen">@color/white_system</item>
         <item name="clrText">@color/darkGray</item>
@@ -19,8 +22,9 @@
         <item name="clrBtnConfig_Border">@color/blue_system</item>
         <item name="clrBtnConfig_Background">@color/WHITE</item>
         <item name="clrBtnConfig_Text">@color/blue_system</item>
+        <item name="clrBtnConfig_RippleColor">@color/light_blue_system</item>
 
-        <!-- Cor label configuração wifi -->handleMiddle
+        <!-- Cor label configuração wifi -->
         <item name="clrLblConfigWiFi">@color/blue_system</item>
 
         <!-- Cor do painel dos dados wi-fi -->

@@ -43,6 +43,39 @@
 
     <!-- _______________________________ TELA DE CONFIGURAÇÃO WI-FI _______________________________ -->
 
+    <!-- Botões -->
+    <style name="btnConfigWiFi" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">?attr/clrText</item>                       <!-- Cor da borda -->
+        <item name="strokeWidth">2dp</item>                                 <!-- Largura da borda -->
+        <item name="cornerRadius">20dp</item>                               <!-- Cantos arredondados -->
+        <item name="backgroundTint">?attr/clrBtnConfig_Background</item>    <!-- Cor de fundo -->
+        <item name="android:textColor">?attr/clrText</item>                 <!-- Cor do texto -->
+        <item name="android:textSize">20sp</item>                           <!-- Tamanho do texto -->
+        <item name="android:textFontWeight">600</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="rippleColor">?attr/clrBtnConfig_RippleColor</item>
+    </style>
+
+    <!-- Botão de Dúvida -->
+    <style name="btnDoubt" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">?attr/clrText</item>                       <!-- Cor da borda -->
+        <item name="strokeWidth">2dp</item>                                 <!-- Largura da borda -->
+        <item name="cornerRadius">20dp</item>                               <!-- Cantos arredondados -->
+        <item name="backgroundTint">?attr/clrBtnConfig_Background</item>    <!-- Cor de fundo -->
+        <item name="android:textColor">?attr/clrText</item>                 <!-- Cor do texto -->
+        <item name="android:textSize">24sp</item>                           <!-- Tamanho do texto -->
+        <item name="android:textFontWeight">600</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="rippleColor">?attr/clrBtnConfig_RippleColor</item>
+    </style>
+
     <!-- EditText Configuração -->
     <style name="txtConfigWiFi_Layout" parent="@style/Widget.Material3.TextInputLayout.FilledBox">
         <item name="android:layout_width">fill_parent</item>
@@ -66,6 +99,7 @@
         <item name="android:textSelectHandle">@drawable/select_handle_middle</item>
         <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
         <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
+        <item name="android:layout_marginBottom">10dp</item>
     </style>
 
     <!-- EditText Password Configuração -->
@@ -94,20 +128,7 @@
         <item name="android:textSelectHandle">@drawable/select_handle_middle</item>
         <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
         <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
-    </style>
-
-    <!-- Botões -->
-    <style name="btnConfigWiFi" parent="Widget.Material3.Button.OutlinedButton">
-        <item name="strokeColor">?attr/clrBtnConfig_Border</item>           <!-- Cor da borda -->
-        <item name="backgroundTint">?attr/clrBtnConfig_Background</item>    <!-- Cor de fundo -->
-        <item name="android:textColor">?attr/clrBtnConfig_Text</item>       <!-- Cor do texto -->
-        <item name="android:textSize">20sp</item>                           <!-- Tamanho do texto -->
-        <item name="cornerRadius">20dp</item>                               <!-- Cantos arredondados -->
-        <item name="strokeWidth">2dp</item>                                 <!-- Largura da borda -->
-        <item name="android:paddingBottom">0dp</item>
-        <item name="android:paddingTop">0dp</item>
-        <item name="android:paddingLeft">15dp</item>
-        <item name="android:paddingRight">15dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
     </style>
 
 </resources>

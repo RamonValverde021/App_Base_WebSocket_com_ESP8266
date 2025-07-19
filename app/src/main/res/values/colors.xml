@@ -10,8 +10,10 @@
     <!-- Cores Nomeadas -->
     <color name="transparent">@android:color/transparent</color>
     <color name="black_system">#171719</color>
-    <color name="white_system">#FEF7FF</color>
+    <color name="white_system">#F1F1F3</color>
     <color name="blue_system">#377AFF</color>
+    <color name="light_blue_system">#89B1FF</color>
+    <color name="light_green_system">#69C286</color>
     <color name="green_system">#009933</color>
     <color name="darkGrayHard">#1A1A1A</color>
     <color name="darkGray">#444444</color>

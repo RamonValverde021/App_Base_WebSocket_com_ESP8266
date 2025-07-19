@@ -31,5 +31,6 @@
     <string name="btnSaveConfig">Save</string>
     <string name="hntMyWiFiPassword">Password my Wi-Fi...</string>
     <string name="btnSendMessage">Send Message</string>
-
+    <string name="txtDoubtTitle">How to configure the Dry Fila Pro connection to the internet network:\n</string>
+    <string name="txtDoubt">"1 - To begin, on the device click on \"SETTINGS\", then click on the Wi-Fi icon and finally click on \"YES\" to confirm. \n \n2 - After the screen to connect to the Wi-Fi network appears, on your smartphone, connect to the Wi-Fi network called \"Dry Fila Pro\" using the password \"adminDFP1\". \n \n3 - Open the application and go to settings and then click on the \"Connect\" button. The button will turn blue when the application connects to the device. \n \n4 - Fill in the fields with the name of your Wi-Fi network and the password\n \n5 - To configure the IP fields:\n \t • In the \"IP Address\" field, use an address available on your local network.\n \t • Keep \"Network Mask\" Subnet\" as 255.255.255.0. \n \t • In the \"Default Gateway\" field, enter the IP address of your modem or router. \n \t • Keep \"DNS\" as 8.8.8.8. \n \n If you have any questions, it is advisable to seek help from an IT professional. "</string>
 </resources>

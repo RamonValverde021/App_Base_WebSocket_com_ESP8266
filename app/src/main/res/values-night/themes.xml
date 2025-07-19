@@ -4,6 +4,9 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
 
+        <!-- Define uma fonte padrão para todo o aplicativo -->
+        <item name="fontFamily">@font/roboto</item>
+
         <!-- Cores do sistema -->
         <item name="clrMainScreen">@color/BLACK</item>
         <item name="clrText">@color/WHITE</item>
@@ -19,6 +22,7 @@
         <item name="clrBtnConfig_Border">@color/green_system</item>
         <item name="clrBtnConfig_Background">@color/BLACK</item>
         <item name="clrBtnConfig_Text">@color/green_system</item>
+        <item name="clrBtnConfig_RippleColor">@color/light_green_system</item>
 
         <!-- Cor label configuração wifi -->
         <item name="clrLblConfigWiFi">@color/green_system</item>

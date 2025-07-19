@@ -32,4 +32,6 @@
     <string name="btnSaveConfig">Salva</string>
     <string name="hntMyWiFiPassword">La mia password Wi-Fi...</string>
     <string name="btnSendMessage">Invia messaggio</string>
+    <string name="txtDoubtTitle">Come configurare la connessione di Dry Fila Pro alla rete internet:\n</string>
+    <string name="txtDoubt">"1 - Per iniziare, sul dispositivo clicca su \"IMPOSTAZIONI\", poi clicca sull'icona Wi-Fi e infine clicca su \"SÌ\" per confermare. \n \n2 - Dopo che appare la schermata per la connessione alla rete Wi-Fi, sul tuo smartphone, connettiti alla rete Wi-Fi denominata \"Dry Fila Pro\" utilizzando la password \"adminDFP1\". \n \n3 - Apri l'applicazione e vai alle impostazioni, quindi clicca sul pulsante \"Connetti\". Il pulsante diventerà blu quando l'applicazione si connetterà al dispositivo. \n \n4 - Compila i campi con il nome della tua rete Wi-Fi e la password. \n \n5 - Per configurare i campi IP: \n \t • Nel campo \"Indirizzo IP\", utilizza un indirizzo disponibile sulla tua rete locale. \n \t • Mantieni \"Maschera di rete\" e Subnet\" come 255.255.255.0. \n \t • Nel campo \"Gateway predefinito\", inserisci l'indirizzo IP del tuo modem o router. \n \t • Mantieni \"DNS\" come 8.8.8.8. \n \n In caso di domande, è consigliabile chiedere aiuto a un professionista IT. "</string>
 </resources>
