@@ -48,36 +48,23 @@ public class ConfigurationWiFi extends AppCompatActivity {
         String defaultGateway = ((EditText) findViewById(R.id.txtDefaultGateway)).getText().toString();
         String dns = ((EditText) findViewById(R.id.txtDNS)).getText().toString();
 
-        String mensagem = "Confirmação:\n\n"
-                + "SSID: " + ssid + "\n"
-                + "Senha: " + password + "\n"
-                + "IP: " + ipAddress + "\n"
-                + "Sub-rede: " + subnetMask + "\n"
-                + "Gateway: " + defaultGateway + "\n"
-                + "DNS: " + dns;
-/*
-        new MaterialAlertDialogBuilder(this)
-                .setTitle("Confirmação")
+        String mensagem = getString(R.string.txtConfirmSSID) + "\n" + ssid + "\n\n"
+                        + getString(R.string.txtConfirmPassword) + "\n" + password + "\n\n"
+                        + getString(R.string.txtConfirmIP) + "\n" + ipAddress + "\n\n"
+                        + getString(R.string.txtConfirmSubNet) + "\n" + subnetMask + "\n\n"
+                        + getString(R.string.txtConfirmGateway) + "\n" + defaultGateway + "\n\n"
+                        + getString(R.string.txtConfirmDNS) + "\n" + dns;
+
+        new MaterialAlertDialogBuilder(this, R.style.MeuDialogoCustomizado)
+                .setTitle(getString(R.string.tltConfirmation))
                 .setMessage(mensagem)
-                .setPositiveButton("OK", (dialog, which) -> {
-                    Toast.makeText(this, "Configurações salvas!", Toast.LENGTH_SHORT).show();
-                })
-                .setNegativeButton("Cancelar", null)
-                .show();
-                */
-        new AlertDialog.Builder(this)
-                .setTitle("Confirmação")
-                .setMessage(mensagem)
-                .setPositiveButton("OK", (dialog, which) -> {
+                .setPositiveButton(getString(R.string.txtBtnOk), (dialog, which) -> {
                     // ação ao confirmar
                     Toast.makeText(this, "Configurações salvas!", Toast.LENGTH_SHORT).show();
                 })
-                .setNegativeButton("Cancelar", null)
+                //.setNegativeButton("Outro", null)
+                .setNeutralButton(getString(R.string.txtBtnCancel), null)
                 .show();
-
-    }
-
-    public void lookPassword(View view) {
     }
 
     public void viewTutorial(View view) {

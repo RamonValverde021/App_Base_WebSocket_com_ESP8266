@@ -34,4 +34,13 @@
     <string name="btnSendMessage">Enviar Mensagem</string>
     <string name="txtDoubtTitle">Como configurar a conexão da Dry Fila Pro à rede de internet:\n</string>
     <string name="txtDoubt">"1 - Para começar, no dispositivo clique em \"CONFIGURACAO\", depois clique no ícone do Wi-Fi e por último clique em \"SIM\" para confirmar. \n \n2 - Depois que aparecer a tela de conectar-se à rede Wi-Fi, no seu smartphone, conecte-se à rede Wi-Fi chamada \"Dry Fila Pro\" usando a senha \"adminDFP1\". \n \n3 - Abra o aplicativo e vá para as configurações e em seguida clique no botão \"Conectar\". O botão ficará azul quando o aplicativo se conectar ao dispositivo.  \n \n 4 - Preencha os campos com o nome da sua rede Wi-Fi e a senha \n \n 5 - Para configurar os campos de IP: \n \t • No campo \"Endereço IP\", use um endereço disponível na sua rede local. \n \t • Mantenha \"Máscara de Sub-Rede\" como 255.255.255.0. \n \t • No campo \"Gateway padrão\", insira o endereço IP do seu modem ou roteador. \n \t • Mantenha \"DNS\" como 8.8.8.8. \n \n Se tiver dúvidas, é aconselhável procurar a ajuda de um profissional de TI. "</string>
+    <string name="txtConfirmSSID">SSID:</string>
+    <string name="txtConfirmPassword">Senha:</string>
+    <string name="txtConfirmIP">IP:</string>
+    <string name="txtConfirmSubNet">Sub-Rede:</string>
+    <string name="txtConfirmGateway">Gateway:</string>
+    <string name="txtConfirmDNS">DNS:</string>
+    <string name="tltConfirmation">Confirmação:</string>
+    <string name="txtBtnCancel">Cancelar</string>
+    <string name="txtBtnOk">Ok</string>
 </resources>
