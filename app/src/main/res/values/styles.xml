@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- _______________________________ TELA PRINCIPAL _______________________________ -->
 
     <style name="standardButton" parent="Widget.Material3.Button.OutlinedButton">
@@ -8,52 +7,37 @@
         <item name="backgroundTint">?attr/clrStdBtn_Background</item>    <!-- Cor de fundo -->
         <item name="android:textColor">?attr/clrStdBtn_Text</item>       <!-- Cor do texto -->
         <item name="android:textSize">24sp</item>                        <!-- Tamanho do texto -->
-        <item name="cornerRadius">22dp
-        </item>                            <!-- Cantos arredondados -->
+        <item name="android:textStyle">bold</item>                       <!-- Texto em Negrito -->
+        <item name="cornerRadius">22dp</item>                            <!-- Cantos arredondados -->
         <item name="strokeWidth">3dp</item>                              <!-- Largura da borda -->
         <item name="android:layout_marginLeft">10dp</item>                <!-- Margem esquerda -->
         <item name="android:layout_marginRight">10dp</item>               <!-- Margem direita -->
     </style>
 
-    <style name="standardButtonSmall" parent="Widget.Material3.Button.OutlinedButton">
-        <item name="strokeColor">?attr/clrStdBtn_Border</item>           <!-- Cor da borda -->
-        <item name="backgroundTint">?attr/clrStdBtn_Background</item>    <!-- Cor de fundo -->
-        <item name="android:textColor">?attr/clrStdBtn_Text</item>       <!-- Cor do texto -->
-        <item name="android:textStyle">bold</item>                       <!-- Texto em Negrito -->
+    <style name="standardButtonSmall" parent="standardButton">
         <item name="android:textSize">16sp</item>                        <!-- Tamanho do texto -->
-        <item name="cornerRadius">20dp
-        </item>                            <!-- Cantos arredondados -->
-        <item name="strokeWidth">3dp</item>                              <!-- Largura da borda -->
+        <item name="cornerRadius">20dp</item>                            <!-- Cantos arredondados -->
+        <item name="strokeWidth">2dp</item>                              <!-- Largura da borda -->
     </style>
 
-    <!-- Labels Configuração -->
-    <style name="lblSendMessage" parent="Widget.Material3.TextInputLayout.FilledBox">
-        <item name="android:textColor">?attr/clrLblConfigWiFi</item>       <!-- Cor do texto -->
-        <item name="android:textSize">16sp</item>                          <!-- Tamanho do texto -->
-    </style>
-
-    <!-- EditText Configuração -->
+    <!-- EditText Enviar Mensagem -->
     <style name="txtSendMessage">
-        <item name="android:textColor">?attr/clrText</item>        <!-- Cor do texto -->
-        <item name="android:textSize">20sp</item>                    <!-- Tamanho do texto -->
-        <item name="android:textColorHint">?attr/clrHint</item>    <!-- Cor leve do texto -->
-        <item name="android:backgroundTint">?attr/clrHint</item>   <!-- Cor leve do sublinhado -->
+        <item name="android:textColor">?attr/clrText</item>                 <!-- Cor do texto -->
+        <item name="android:textSize">20sp</item>                           <!-- Tamanho do texto -->
+        <item name="android:textColorHint">?attr/clrHint</item>             <!-- Cor leve do texto -->
+        <item name="android:backgroundTint">?attr/clrHint</item>            <!-- Cor leve do sublinhado -->
     </style>
-
 
     <!-- _______________________________ TELA DE CONFIGURAÇÃO WI-FI _______________________________ -->
 
     <!-- Botões -->
     <style name="btnConfigWiFi" parent="Widget.Material3.Button.OutlinedButton">
-        <item name="strokeColor">?attr/clrText</item>                       <!-- Cor da borda -->
-        <item name="strokeWidth">2dp
-        </item>                                 <!-- Largura da borda -->
-        <item name="cornerRadius">20dp
-        </item>                               <!-- Cantos arredondados -->
-        <item name="backgroundTint">?attr/clrBtnConfig_Background</item>    <!-- Cor de fundo -->
-        <item name="android:textColor">?attr/clrText</item>                 <!-- Cor do texto -->
-        <item name="android:textSize">20sp
-        </item>                           <!-- Tamanho do texto -->
+        <item name="strokeColor">?attr/clrText</item> <!-- Cor da borda -->
+        <item name="strokeWidth">2dp</item> <!-- Largura da borda -->
+        <item name="cornerRadius">20dp</item> <!-- Cantos arredondados -->
+        <item name="backgroundTint">?attr/clrBtnConfig_Background</item> <!-- Cor de fundo -->
+        <item name="android:textColor">?attr/clrText</item> <!-- Cor do texto -->
+        <item name="android:textSize">20sp</item> <!-- Tamanho do texto -->
         <item name="android:textFontWeight">600</item>
         <item name="android:paddingBottom">0dp</item>
         <item name="android:paddingTop">0dp</item>
@@ -66,15 +50,12 @@
 
     <!-- Botão de Dúvida -->
     <style name="btnDoubt" parent="Widget.Material3.Button.OutlinedButton">
-        <item name="strokeColor">?attr/clrText</item>                       <!-- Cor da borda -->
-        <item name="strokeWidth">2dp
-        </item>                                 <!-- Largura da borda -->
-        <item name="cornerRadius">20dp
-        </item>                               <!-- Cantos arredondados -->
-        <item name="backgroundTint">?attr/clrBtnConfig_Background</item>    <!-- Cor de fundo -->
-        <item name="android:textColor">?attr/clrText</item>                 <!-- Cor do texto -->
-        <item name="android:textSize">24sp
-        </item>                           <!-- Tamanho do texto -->
+        <item name="strokeColor">?attr/clrText</item> <!-- Cor da borda -->
+        <item name="strokeWidth">2dp</item> <!-- Largura da borda -->
+        <item name="cornerRadius">20dp</item> <!-- Cantos arredondados -->
+        <item name="backgroundTint">?attr/clrBtnConfig_Background</item> <!-- Cor de fundo -->
+        <item name="android:textColor">?attr/clrText</item> <!-- Cor do texto -->
+        <item name="android:textSize">24sp</item> <!-- Tamanho do texto -->
         <item name="android:textFontWeight">600</item>
         <item name="android:padding">0dp</item>
         <item name="android:layout_width">40dp</item>
@@ -89,7 +70,7 @@
         <item name="android:textColorHint">?attr/clrLblConfigWiFi</item>
         <item name="hintTextColor">?attr/clrLblConfigWiFi</item>
         <item name="placeholderTextColor">?attr/clrHint</item>
-        <item name="boxStrokeColor">?attr/clrText</item>
+        <item name="boxStrokeColor">?attr/clrLblConfigWiFi</item>
         <item name="cursorColor">?attr/clrText</item>
         <item name="android:layout_marginBottom">30dp</item>
     </style>
@@ -109,60 +90,45 @@
     </style>
 
     <!-- EditText Password Configuração -->
-    <style name="pswConfigWiFi_Layout" parent="@style/Widget.Material3.TextInputLayout.FilledBox">
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColorHint">?attr/clrLblConfigWiFi</item>
-        <item name="hintTextColor">?attr/clrLblConfigWiFi</item>
-        <item name="placeholderTextColor">?attr/clrHint</item>
-        <item name="boxStrokeColor">?attr/clrText</item>
-        <item name="cursorColor">?attr/clrText</item>
+    <style name="pswConfigWiFi_Layout" parent="txtConfigWiFi_Layout">
         <item name="endIconMode">password_toggle</item>
         <item name="endIconTint">?attr/clrHint</item>
-        <item name="android:layout_marginBottom">30dp</item>
     </style>
 
-    <style name="pswConfigWiFi_Edit">
-        <item name="android:textColor">?attr/clrText</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:backgroundTint">?attr/clrHint</item>
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/transparent</item>
+    <style name="pswConfigWiFi_Edit" parent="txtConfigWiFi_Edit">
         <item name="android:inputType">textPassword</item>
-        <item name="android:textColorHighlight">?attr/clrHint</item>
-        <item name="android:textSelectHandle">@drawable/select_handle_middle</item>
-        <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
-        <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
-        <item name="android:layout_marginBottom">10dp</item>
     </style>
 
 
-    <!-- _______________________________ TELA DE CONFIRMAÇÃO WI-FI _______________________________ -->
+    <!-- _______________________________ PAINEL DE CONFIRMAÇÃO WI-FI _______________________________ -->
 
+    <!-- Configurações gerais do painel de alerta -->
     <style name="MeuDialogoCustomizado" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
-        <item name="colorSurface">?attr/clrMainScreen</item>
-        <item name="android:dialogCornerRadius">15dp</item>
-        <item name="cornerFamily">rounded</item>
+        <item name="android:background">?attr/clrPanelConfigWiFi</item>
+        <item name="cornerFamily">rounded</item> <!-- Define os cantos do painel -->
+        <item name="android:dialogCornerRadius">15dp</item> <!-- Define o tamanho dos cantos do painel -->
         <item name="android:paddingBottom">2dp</item>
-        <item name="materialAlertDialogTitleTextStyle">@style/TitleTextStyle</item>
-        <item name="materialAlertDialogBodyTextStyle">@style/BodyTextStyle</item>
-        <item name="buttonBarPositiveButtonStyle">@style/ButtonStyle</item>
-        <item name="buttonBarNeutralButtonStyle">@style/ButtonStyle</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/TitleTextStyle</item> <!-- Chama o estilo do titulo -->
+        <item name="materialAlertDialogBodyTextStyle">@style/BodyTextStyle</item> <!-- Chama o estilo da mensagem -->
+        <item name="buttonBarPositiveButtonStyle">@style/ButtonStyle</item> <!-- Chama o estilo do botão de confirmação -->
+        <item name="buttonBarNeutralButtonStyle">@style/ButtonStyle</item> <!-- Chama o estilo do botão neutro, mais a esquerda -->
     </style>
 
+    <!-- Edição do Titulo -->
     <style name="TitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
         <item name="android:textColor">?attr/clrLblConfigWiFi</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">30sp</item>
     </style>
 
+    <!-- Edição da mensagem -->
     <style name="BodyTextStyle" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
         <item name="android:textColor">?attr/clrText</item>
         <item name="android:textSize">20sp</item>
         <item name="android:fontWeight">700</item>
     </style>
 
+    <!-- Edição dos botões -->
     <style name="ButtonStyle" parent="Widget.Material3.Button.OutlinedButton">
         <item name="strokeColor">?attr/clrText</item>
         <item name="strokeWidth">2dp</item>

@@ -8,6 +8,20 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ProgressBar
+        android:id="@+id/iconeStatus"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:progressBackgroundTint="#032881"
+        android:visibility="visible"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="?attr/clrScrViw_Border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/lblStatus"
         android:layout_width="0dp"
@@ -23,7 +37,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <Button
         android:id="@+id/btnSendJSON"
         style="@style/standardButton"
@@ -31,12 +44,37 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:onClick="sendJSON"
-
         android:text="@string/btnSendJSON"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/txtMessageText"
+        style="@style/txtSendMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="@string/btnSendMessage"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSendJSON" />
+
+    <Button
+        android:id="@+id/btnSendMensage"
+        style="@style/standardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="sendText"
+        android:text="@string/btnSendMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMessageText" />
 
     <TextView
         android:id="@+id/tltSerial"
@@ -44,10 +82,22 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:text="@string/tltSerial"
-        android:textColor="?attr/clrText"
+        android:textColor="?attr/clrLblConfigWiFi"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/scrollSerial"
         app:layout_constraintStart_toStartOf="@+id/scrollSerial" />
+
+    <Button
+        android:id="@+id/btnLimpar"
+        style="@style/standardButtonSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:onClick="limparSerial"
+        android:text="@string/btnCleanSerial"
+        app:layout_constraintBottom_toTopOf="@+id/scrollSerial"
+        app:layout_constraintEnd_toEndOf="@+id/scrollSerial" />
 
     <ScrollView
         android:id="@+id/scrollSerial"
@@ -55,8 +105,7 @@
         android:layout_height="200dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-
+        android:layout_marginBottom="30dp"
         android:background="@drawable/border_scrollview"
         android:foregroundGravity="top"
         android:padding="10sp"
@@ -76,102 +125,67 @@
                 android:layout_height="wrap_content"
                 android:textColor="?attr/clrText"
                 android:textSize="16sp" />
+
         </LinearLayout>
     </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Button
-            android:id="@+id/btnConecta"
-            style="@style/standardButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="conectar"
-            android:text="@string/btnConnect" />
-
-        <Button
-            android:id="@+id/btnDesconecta"
-            style="@style/standardButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="desconectar"
-            android:text="@string/btnDesconnect" />
-
-    </LinearLayout>
 
     <ImageView
         android:id="@+id/imgLed"
         android:layout_width="wrap_content"
         android:layout_height="120sp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="30dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/led_transparente" />
 
-    <ProgressBar
-        android:id="@+id/iconeStatus"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:progressBackgroundTint="#032881"
-        android:visibility="visible"
-        android:indeterminateTintMode="src_atop"
-        android:indeterminateTint="?attr/clrScrViw_Border"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnLimpar"
-        style="@style/standardButtonSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:onClick="limparSerial"
-        android:text="@string/btnCleanSerial"
-        app:layout_constraintBottom_toTopOf="@+id/scrollSerial"
-        app:layout_constraintEnd_toEndOf="@+id/scrollSerial" />
-
-    <EditText
-        style="@style/txtSendMessage"
-        android:id="@+id/txtMensageText"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:hint="@string/txtMensageText"
-        android:inputType="text"
+        android:layout_marginBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSendJSON" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/btnSendMensage"
-        style="@style/standardButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:onClick="sendText"
-        android:text="@string/btnSendMessage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMensageText" />
+        <Button
+            android:id="@+id/btnDesconecta"
+            style="@style/standardButtonSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="desconectar"
+            android:text="@string/btnDesconnect"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btnScreenConfig"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:adjustViewBounds="true"
+            android:onClick="screenConfig"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/engrenagem_03" />
+
+        <Button
+            android:id="@+id/btnConecta"
+            style="@style/standardButtonSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_weight="1"
+            android:onClick="conectar"
+            android:text="@string/btnConnect"
+            app:layout_constraintEnd_toStartOf="@+id/btnDesconecta"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

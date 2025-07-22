@@ -11,12 +11,12 @@
 
     <ScrollView
         android:id="@+id/ScrollViewPrincipal"
-        android:fillViewport="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="20dp"
-        android:paddingTop="20dp"
-        android:paddingRight="20dp"
+        android:fillViewport="true"
+        android:paddingLeft="50dp"
+        android:paddingTop="0dp"
+        android:paddingRight="50dp"
         android:paddingBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,9 +24,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -36,7 +36,6 @@
                     android:id="@+id/tltConfigurations"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:text="@string/tltSETTINGS"
                     android:textColor="?attr/clrText"
                     android:textSize="34sp"
@@ -59,7 +58,7 @@
                 <Button
                     android:id="@+id/btnConnect"
                     style="@style/btnConfigWiFi"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:onClick="connectWebsocket"
                     android:text="@string/btnConnect"
                     app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +78,7 @@
                     android:id="@+id/linearLayout2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/border_linear_layout"
                     android:gravity="top"
                     android:orientation="vertical"
@@ -90,75 +89,70 @@
                     app:layout_constraintTop_toBottomOf="@+id/btnConnect">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/txtSSIDLayout"
                         style="@style/txtConfigWiFi_Layout"
-                        android:layout_width="match_parent"
                         app:placeholderText="@string/hntMyWiFiAddress">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/txtSSID"
                             style="@style/txtConfigWiFi_Edit"
-                            android:layout_width="match_parent"
                             android:hint="@string/tltWiFiNetworkSSID"
                             android:inputType="textAutoComplete" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/txtPasswordLayout"
                         style="@style/pswConfigWiFi_Layout"
                         app:placeholderText="@string/hntMyWiFiPassword">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/txtPassword"
                             style="@style/pswConfigWiFi_Edit"
-                            android:layout_width="match_parent"
                             android:hint="@string/tltPassword"
                             android:inputType="textPassword" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/txtIPAddressLayout"
                         style="@style/txtConfigWiFi_Layout"
                         app:placeholderText="192.168.0.130">
+
                         <com.google.android.material.textfield.TextInputEditText
-                            style="@style/txtConfigWiFi_Edit"
                             android:id="@+id/txtIPAddress"
-                            android:inputType="number|text"
-                            android:hint="@string/tltIPAddress"/>
+                            style="@style/txtConfigWiFi_Edit"
+                            android:hint="@string/tltIPAddress"
+                            android:inputType="number|text" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/txtSubnetMaskLayout"
                         style="@style/txtConfigWiFi_Layout"
                         app:placeholderText="255.255.255.0">
+
                         <com.google.android.material.textfield.TextInputEditText
-                            style="@style/txtConfigWiFi_Edit"
                             android:id="@+id/txtSubnetMask"
-                            android:inputType="number|text"
-                            android:hint="@string/tltSubnetMask"/>
+                            style="@style/txtConfigWiFi_Edit"
+                            android:hint="@string/tltSubnetMask"
+                            android:inputType="number|text" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/txtDefaultGatewayLayout"
                         style="@style/txtConfigWiFi_Layout"
                         app:placeholderText="192.168.0.1">
+
                         <com.google.android.material.textfield.TextInputEditText
-                            style="@style/txtConfigWiFi_Edit"
                             android:id="@+id/txtDefaultGateway"
-                            android:inputType="number|text"
-                            android:hint="@string/tltDefaultGateway"/>
+                            style="@style/txtConfigWiFi_Edit"
+                            android:hint="@string/tltDefaultGateway"
+                            android:inputType="number|text" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/txtDNSLayout"
                         style="@style/txtConfigWiFi_Layout"
                         android:layout_marginBottom="0dp"
                         app:placeholderText="8.8.8.8">
+
                         <com.google.android.material.textfield.TextInputEditText
-                            style="@style/txtConfigWiFi_Edit"
                             android:id="@+id/txtDNS"
-                            android:inputType="number|text"
-                            android:hint="@string/tltDNS"/>
+                            style="@style/txtConfigWiFi_Edit"
+                            android:hint="@string/tltDNS"
+                            android:inputType="number|text" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
@@ -199,8 +193,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/txtDoubtTitle"
                         android:textColor="?attr/clrText"
-                        android:textStyle="bold"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/textView3"

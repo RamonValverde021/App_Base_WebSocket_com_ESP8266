@@ -5,12 +5,15 @@
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
 
         <!-- Define uma fonte padrão para todo o aplicativo -->
-        <item name="fontFamily">@font/roboto</item>
+        <item name="fontFamily">@font/tektur</item>
 
         <!-- Cores do sistema -->
         <item name="clrMainScreen">@color/BLACK</item>
         <item name="clrText">@color/WHITE</item>
         <item name="clrHint">@color/lightGray</item>
+
+        <!-- Cores scrollView dados websocket -->
+        <item name="clrScrViw_Background">@color/BLACK</item>
         <item name="clrScrViw_Border">@color/green_system</item>
 
         <!-- Cores botão padrão -->
@@ -29,7 +32,6 @@
 
         <!-- Cor do painel dos dados wi-fi -->
         <item name="clrPanelConfigWiFi">@color/black_system</item>
-
     </style>
 
 </resources>

@@ -43,4 +43,10 @@
     <string name="tltConfirmation">Conferma:</string>
     <string name="txtBtnCancel">Cancellare:</string>
     <string name="txtBtnOk">Ok</string>
+    <string name="altFieldSSID">Il campo SSID è vuoto!</string>
+    <string name="altFieldPassword">Il campo Password è vuoto!</string>
+    <string name="altFieldIP">Il campo Indirizzo IP è vuoto!</string>
+    <string name="altFieldSubnet">Il campo Subnet Mask è vuoto!</string>
+    <string name="altFieldGateway">Il campo Gateway predefinito è vuoto!</string>
+    <string name="altFieldDNS">Il campo DNS è vuoto!</string>
 </resources>

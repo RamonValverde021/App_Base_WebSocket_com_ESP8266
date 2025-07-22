@@ -42,4 +42,10 @@
     <string name="tltConfirmation">Confirmation:</string>
     <string name="txtBtnCancel">Cancel</string>
     <string name="txtBtnOk">Ok</string>
+    <string name="altFieldSSID">SSID field is empty!</string>
+    <string name="altFieldPassword">Password field is empty!</string>
+    <string name="altFieldIP">IP Address field is empty!</string>
+    <string name="altFieldSubnet">Subnet Mask field is empty!</string>
+    <string name="altFieldGateway">Default Gateway field is empty!</string>
+    <string name="altFieldDNS">DNS field is empty!</string>
 </resources>

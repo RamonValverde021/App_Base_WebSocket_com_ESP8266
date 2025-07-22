@@ -1,5 +1,6 @@
 package com.basewebsocket;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.basewebsocket.model.json_enviar.JsonEnviar;
@@ -23,6 +24,7 @@ import java.net.URI;
 
 public class MainActivity extends AppCompatActivity {
 
+    Intent configScreen;
     private URI uri;
     private MeuWebSocket socket;
     private TextView serial, status;
@@ -39,9 +41,10 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        configScreen = new Intent(getApplicationContext(), ConfigurationWiFi.class);
         serial = findViewById(R.id.lblSerial);
         status = findViewById(R.id.lblStatus);
-        mensagem = findViewById(R.id.txtMensageText);
+        mensagem = findViewById(R.id.txtMessageText);
 
         try {
             uri = new URI("ws://192.168.0.130:2450/"); // Certifique-se que é a porta certa!
@@ -146,5 +149,9 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();                                       // Captura qualquer erro e exibe na interface e no log
             status.setText(getString(R.string.msgErrorConnecting));
         }
+    }
+
+    public void screenConfig(View view) {
+        startActivity(configScreen);
     }
 }
