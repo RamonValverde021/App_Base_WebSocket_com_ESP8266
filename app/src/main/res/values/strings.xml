@@ -6,7 +6,7 @@
     <string name="tltSerial">Serial</string>
     <string name="msgAppConnected">Application Connected!</string>
     <string name="msgFailReconnect">Failed to reconnect</string>
-    <string name="msgWebSocketConnectionIsNotActive">WebSocket connection is not active!</string>
+    <string name="msgConnectionToDeviceIsNotActive">Connection to device is not active!</string>
     <string name="msgDisconnected">Disconnected</string>
     <string name="msgAlreadyDisconnect">Already disconnected</string>
     <string name="msgErrorDisconnecting">Error disconnecting</string>
@@ -20,7 +20,7 @@
     <string name="msgEmptyField">Empty field! Enter a message</string>
     <string name="msgFailedAfterMultipleAttempts">Failed after multiple attempts</string>
     <string name="tltSETTINGS">SETTINGS:</string>
-    <string name="tltConfigureDevice">Configure Device</string>
+    <string name="tltConfigureDeviceNetwork">Configure Device Network</string>
     <string name="tltWiFiNetworkSSID">Wi-Fi Network (SSID):</string>
     <string name="tltPassword">Password:</string>
     <string name="tltIPAddress">IP Address:</string>
@@ -42,10 +42,7 @@
     <string name="tltConfirmation">Confirmation:</string>
     <string name="txtBtnCancel">Cancel</string>
     <string name="txtBtnOk">Ok</string>
-    <string name="altFieldSSID">SSID field is empty!</string>
-    <string name="altFieldPassword">Password field is empty!</string>
-    <string name="altFieldIP">IP Address field is empty!</string>
-    <string name="altFieldSubnet">Subnet Mask field is empty!</string>
-    <string name="altFieldGateway">Default Gateway field is empty!</string>
-    <string name="altFieldDNS">DNS field is empty!</string>
+    <string name="altRequiredField">Required field!</string>
+    <string name="altInvalidIPAddress">Invalid IP address.</string>
+    <string name="msgSettingsSaved">Settings Saved!</string>
 </resources>

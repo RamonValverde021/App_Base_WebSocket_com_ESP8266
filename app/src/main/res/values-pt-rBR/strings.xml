@@ -7,7 +7,7 @@
     <string name="btnConnect">Conectar</string>
     <string name="msgAppConnected">Aplicativo Conectado!</string>
     <string name="msgFailReconnect">Falha ao reconectar</string>
-    <string name="msgWebSocketConnectionIsNotActive">Conexão WebSocket não está ativa!</string>
+    <string name="msgConnectionToDeviceIsNotActive">Conexão com o dispositivo não está ativo!</string>
     <string name="msgDisconnected">Desconectado</string>
     <string name="msgAlreadyDisconnect">Já está desconectado</string>
     <string name="msgConnecting">Conectando...</string>
@@ -21,7 +21,7 @@
     <string name="msgEmptyField">Campo vazio! Digite uma mensagem</string>
     <string name="msgFailedAfterMultipleAttempts">Falha após várias tentativas</string>
     <string name="tltSETTINGS">CONFIGURAÇÕES:</string>
-    <string name="tltConfigureDevice">Configurar Dispositivo</string>
+    <string name="tltConfigureDeviceNetwork">Configurar Rede do Dispositivo</string>
     <string name="tltWiFiNetworkSSID">Rede Wi-Fi (SSID):</string>
     <string name="tltPassword">Senha:</string>
     <string name="tltIPAddress">Endreço IP:</string>
@@ -43,10 +43,7 @@
     <string name="tltConfirmation">Confirmação:</string>
     <string name="txtBtnCancel">Cancelar</string>
     <string name="txtBtnOk">Ok</string>
-    <string name="altFieldSSID">Campo SSID está vazio!</string>
-    <string name="altFieldPassword">Campo Senha está vazio!</string>
-    <string name="altFieldIP">Campo Endereço IP está vazio!</string>
-    <string name="altFieldSubnet">Campo Máscara de Sub-Rede está vazio!</string>
-    <string name="altFieldGateway">Campo Gateway Padrão está vazio!</string>
-    <string name="altFieldDNS">"Campo DNS está vazio! "</string>
+    <string name="altRequiredField">Campo obrigatorio!</string>
+    <string name="altInvalidIPAddress">Endereço IP inválido.</string>
+    <string name="msgSettingsSaved">Configurações Salvas!</string>
 </resources>

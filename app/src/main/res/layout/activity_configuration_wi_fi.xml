@@ -49,7 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="@string/tltConfigureDevice"
+                    android:text="@string/tltConfigureDeviceNetwork"
                     android:textColor="?attr/clrText"
                     android:textSize="24sp"
                     android:textStyle="bold"

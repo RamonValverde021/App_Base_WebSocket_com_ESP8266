@@ -32,15 +32,14 @@ import java.net.URI;
 import java.util.Objects;
 
 public class ConfigurationWiFi extends AppCompatActivity {
-
     Intent mainScreen;
     Button btnEnviar;
     LinearLayout tutorial;
     ScrollView scrollViewMain;
     URI uri;
     MeuWebSocket socket;
-    TextInputEditText ssidEdit, passwordEdit, ipEdit, subnetEdit, gatewayEdit, dnsEdit;
     TextInputLayout ssidLayout, passwordLayout, ipLayout, subnetLayout, gatewayLayout, dnsLayout;
+    TinyDB tinyDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,13 +64,6 @@ public class ConfigurationWiFi extends AppCompatActivity {
         gatewayLayout = findViewById(R.id.txtDefaultGatewayLayout);
         dnsLayout = findViewById(R.id.txtDNSLayout);
 
-        ssidEdit = findViewById(R.id.txtSSID);
-        passwordEdit = findViewById(R.id.txtPassword);
-        ipEdit = findViewById(R.id.txtIPAddress);
-        subnetEdit = findViewById(R.id.txtSubnetMask);
-        gatewayEdit = findViewById(R.id.txtDefaultGateway);
-        dnsEdit = findViewById(R.id.txtDNS);
-
         // Chamada de função para limpar o alerta de erro dos campos de digitação
         clearTypingError(ssidLayout);
         clearTypingError(passwordLayout);
@@ -79,6 +71,28 @@ public class ConfigurationWiFi extends AppCompatActivity {
         clearTypingError(subnetLayout);
         clearTypingError(gatewayLayout);
         clearTypingError(dnsLayout);
+
+        // Incializando Banco de dados
+        tinyDB = new TinyDB(this);
+
+        // Buscando dados do Wi-Fi na memoria
+        String ssidSalve = tinyDB.get("ssid", getString(R.string.hntMyWiFiAddress));
+        String passwordSalve = tinyDB.get("password", getString(R.string.hntMyWiFiPassword));
+        String ipSalve = tinyDB.get("ip", "192.168.0.130");
+        String subnetSalve = tinyDB.get("subnet", "255.255.255.0");
+        String gatewaySalve = tinyDB.get("gateway", "192.168.0.1");
+        String dnsSalve = tinyDB.get("dns", "8.8.8.8");
+
+        // Atualizando placeholders dos campos
+        ((TextInputLayout) findViewById(R.id.txtSSIDLayout)).setPlaceholderText(ssidSalve);
+        //((TextInputLayout) findViewById(R.id.txtPasswordLayout)).setPlaceholderText(passwordSalve); // Não é muito seguro esse
+        ((TextInputLayout) findViewById(R.id.txtIPAddressLayout)).setPlaceholderText(ipSalve);
+        ((TextInputLayout) findViewById(R.id.txtSubnetMaskLayout)).setPlaceholderText(subnetSalve);
+        ((TextInputLayout) findViewById(R.id.txtDefaultGatewayLayout)).setPlaceholderText(gatewaySalve);
+        ((TextInputLayout) findViewById(R.id.txtDNSLayout)).setPlaceholderText(dnsSalve);
+
+        // Observando dados salvos
+        Log.d("debugIP", "SSID: " + ssidSalve + "\n" + "Senha: " + passwordSalve + "\n" + "IP: " + ipSalve + "\n" + "Mascara de Sub-Rede: " + subnetSalve + "\n" + "Gateway Padrão: " + gatewaySalve + "\n" + "DNS: " + dnsSalve);
     }
 
     public void returnMain(View view) {
@@ -150,99 +164,67 @@ public class ConfigurationWiFi extends AppCompatActivity {
     }
 
     public void saveConfig(View view) {
-/*
-        String ssid = ((EditText) findViewById(R.id.txtSSID)).getText().toString();
-        String password = ((EditText) findViewById(R.id.txtPassword)).getText().toString();
-        String ip = ((EditText) findViewById(R.id.txtIPAddress)).getText().toString();
-        String subnet = ((EditText) findViewById(R.id.txtSubnetMask)).getText().toString();
-        String gateway = ((EditText) findViewById(R.id.txtDefaultGateway)).getText().toString();
-        String dns = ((EditText) findViewById(R.id.txtDNS)).getText().toString();
+        if (socket != null && socket.isOpen()) {     // Verifica se o websocket esta conectado
 
-        String mensagem = getString(R.string.txtConfirmSSID) + "\n" + ssid + "\n\n"
-                        + getString(R.string.txtConfirmPassword) + "\n" + password + "\n\n"
-                        + getString(R.string.txtConfirmIP) + "\n" + ipAddress + "\n\n"
-                        + getString(R.string.txtConfirmSubNet) + "\n" + subnetMask + "\n\n"
-                        + getString(R.string.txtConfirmGateway) + "\n" + defaultGateway + "\n\n"
-                        + getString(R.string.txtConfirmDNS) + "\n" + dns;
+            String ssid = validField(ssidLayout);
+            String password = validField(passwordLayout);
+            String ip = validField(ipLayout);
+            String subnet = validField(subnetLayout);
+            String gateway = validField(gatewayLayout);
+            String dns = validField(dnsLayout);
 
-                                new MaterialAlertDialogBuilder(this, R.style.MeuDialogoCustomizado)
-                                        .setTitle(getString(R.string.tltConfirmation))
-                                        .setMessage(mensagem)
-                                        .setPositiveButton(getString(R.string.txtBtnOk), (dialog, which) -> {
-                                            // ação ao confirmar
-                                            Toast.makeText(this, "Configurações salvas!", Toast.LENGTH_SHORT).show();
-                                        })
-                                        //.setNegativeButton("Outro", null)
-                                        .setNeutralButton(getString(R.string.txtBtnCancel), null)
-                                        .show();
+            if (ssid != null) { // Verifica se o ssid não está vazio
+                if (password != null) {
+                    if (ip != null) { // Verifica se contem um código IP valido
+                        if (subnet != null) {
+                            if (gateway != null) {
+                                if (dns != null) {
+
+                                    String mensagem = getString(R.string.txtConfirmSSID) + "\n" + ssid + "\n\n"
+                                            + getString(R.string.txtConfirmPassword) + "\n" + password + "\n\n"
+                                            + getString(R.string.txtConfirmIP) + "\n" + ip + "\n\n"
+                                            + getString(R.string.txtConfirmSubNet) + "\n" + subnet + "\n\n"
+                                            + getString(R.string.txtConfirmGateway) + "\n" + gateway + "\n\n"
+                                            + getString(R.string.txtConfirmDNS) + "\n" + dns;
+
+                                    new MaterialAlertDialogBuilder(this, R.style.MeuDialogoCustomizado)
+                                            .setTitle(getString(R.string.tltConfirmation))
+                                            .setMessage(mensagem)
+                                            .setPositiveButton(getString(R.string.txtBtnOk), (dialog, which) -> {
+                                                // Ações de confirmação
+
+                                                // Gravando dados no banco de dados
+                                                tinyDB.put("ssid", ssid);
+                                                tinyDB.put("password", password);
+                                                tinyDB.put("ip", ip);
+                                                tinyDB.put("subnet", subnet);
+                                                tinyDB.put("gateway", gateway);
+                                                tinyDB.put("dns", dns);
+
+                                                // Exibindo mensagem de confirmação
+                                                Toast.makeText(this, getString(R.string.msgSettingsSaved), Toast.LENGTH_SHORT).show();
+                                            })
+                                            //.setNegativeButton("Outro", null)
+                                            .setNeutralButton(getString(R.string.txtBtnCancel), null)
+                                            .show();
+                                }
                             }
                         }
                     }
+
                 }
-            } else { // Senha
-                passwordLayout.setError("Campo Senha vázio");
             }
-        }else{ // SSID
-            ssidLayout.setError("Campo SSID vázio");
-        }
- */
-
-        String okSSID = validField(ssidLayout);
-        String okPassword = validField(passwordLayout);
-        String okIP = validField(ipLayout);
-        String okSubnet = validField(subnetLayout);
-        String okGateway = validField(gatewayLayout);
-        String okDNS = validField(dnsLayout);
-
-        if (okSSID != null) {
-            if (okPassword != null) {
-                if (okIP != null) {
-                    if (okSubnet != null) {
-                        if (okGateway != null) {
-                            if (okDNS != null) {
-
-                                String ssid = (ssidEdit != null && ssidEdit.getText() != null) ? ssidEdit.getText().toString().trim() : "";
-                                String password = (passwordEdit != null && passwordEdit.getText() != null) ? passwordEdit.getText().toString().trim() : "";
-                                String ip = (ipEdit != null && ipEdit.getText() != null) ? ipEdit.getText().toString().trim() : "";
-                                String subnet = (subnetEdit != null && subnetEdit.getText() != null) ? subnetEdit.getText().toString().trim() : "";
-                                String gateway = (gatewayEdit != null && gatewayEdit.getText() != null) ? gatewayEdit.getText().toString().trim() : "";
-                                String dns = (dnsEdit != null && dnsEdit.getText() != null) ? dnsEdit.getText().toString().trim() : "";
-
-                                String mensagem = getString(R.string.txtConfirmSSID) + "\n" + ssid + "\n\n"
-                                        + getString(R.string.txtConfirmPassword) + "\n" + password + "\n\n"
-                                        + getString(R.string.txtConfirmIP) + "\n" + ip + "\n\n"
-                                        + getString(R.string.txtConfirmSubNet) + "\n" + subnet + "\n\n"
-                                        + getString(R.string.txtConfirmGateway) + "\n" + gateway + "\n\n"
-                                        + getString(R.string.txtConfirmDNS) + "\n" + dns;
-
-                                new MaterialAlertDialogBuilder(this, R.style.MeuDialogoCustomizado)
-                                        .setTitle(getString(R.string.tltConfirmation))
-                                        .setMessage(mensagem)
-                                        .setPositiveButton(getString(R.string.txtBtnOk), (dialog, which) -> {
-                                            // ação ao confirmar
-                                            Toast.makeText(this, "Configurações salvas!", Toast.LENGTH_SHORT).show();
-                                        })
-                                        //.setNegativeButton("Outro", null)
-                                        .setNeutralButton(getString(R.string.txtBtnCancel), null)
-                                        .show();
-                            }
-                        }
-                    }
-                }
-
-            }
+        } else {
+            Toast.makeText(getApplicationContext(), getString(R.string.msgConnectionToDeviceIsNotActive), Toast.LENGTH_SHORT).show();
         }
     }
 
-
-// Função para validar endereço IPv4
-
     /**
-     * Valida o conteúdo de um campo TextInputLayout como um endereço IPv4.
+     * Valida o conteúdo de um campo TextInputLayout como um endereço IPv4 ou se está vazio.
      * Exibe erro no próprio campo em caso de valor inválido ou ausente.
      *
-     * @param textInputLayout Campo com TextInputEditText de onde será lido o IP.
-     * @return O IP válido como String, ou null se for inválido.
+     * @param textInputLayout Campo com TextInputEditText de onde será lido o conteudo.
+     * @return O conteudo válido como String, ou null se for inválido.
      */
     public String validField(TextInputLayout textInputLayout) {
         // Obtém o EditText que está dentro do TextInputLayout
@@ -252,24 +234,24 @@ public class ConfigurationWiFi extends AppCompatActivity {
         if (editText != null) {
             int id = editText.getId();
             String nomeId = textInputLayout.getContext().getResources().getResourceEntryName(id);
-            Log.d("idEditText", "ID: " + id + ", Nome: " + nomeId);
+            Log.d("idEditText", "ID: " + id + ", Nome: " + nomeId); // Para fins de observação
 
             if (Objects.equals(nomeId, "txtSSID")) {
                 // Pega o texto digitado no campo, removendo espaços em branco das extremidades
                 String ssid = Objects.requireNonNull(editText.getText()).toString().trim();
-                if (ssid.isEmpty()) {
-                    textInputLayout.setError("Campo obrigatório");
+                if (ssid.isEmpty()) { // Se o campo estiver vazio
+                    textInputLayout.setError(getString(R.string.altRequiredField)); // Informa no campo que está vazio
                     return null;
-                } else {
-                    return ssid;
+                } else { // Se o campo estiver preenchido
+                    return Objects.requireNonNull(editText.getText()).toString(); // Retorna o valor do campo convertido em string
                 }
             } else if (Objects.equals(nomeId, "txtPassword")) {
                 String password = Objects.requireNonNull(editText.getText()).toString().trim();
                 if (password.isEmpty()) {
-                    textInputLayout.setError("Campo obrigatório");
+                    textInputLayout.setError(getString(R.string.altRequiredField));
                     return null;
                 } else {
-                    return password;
+                    return Objects.requireNonNull(editText.getText()).toString();
                 }
             } else {
                 // Pega o texto digitado no campo, removendo espaços em branco das extremidades
@@ -277,7 +259,7 @@ public class ConfigurationWiFi extends AppCompatActivity {
 
                 // Verifica se o campo está vazio
                 if (TextUtils.isEmpty(ip)) {
-                    textInputLayout.setError("Campo obrigatório");
+                    textInputLayout.setError(getString(R.string.altRequiredField));
                     return null;
                 }
 
@@ -290,12 +272,12 @@ public class ConfigurationWiFi extends AppCompatActivity {
                     textInputLayout.setError(null); // Remove qualquer erro anterior
                     return ip; // Retorna o IP válido
                 } else {
-                    textInputLayout.setError("Endereço IP inválido"); // Define erro se IP for inválido
+                    textInputLayout.setError(getString(R.string.altInvalidIPAddress)); // Define erro se IP for inválido
                     return null;
                 }
             }
         } else {
-            textInputLayout.setError("Campo inválido");
+            textInputLayout.setError(getString(R.string.altRequiredField));
             return null;
         }
     }

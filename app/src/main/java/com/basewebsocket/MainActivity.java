@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         if (socket != null && socket.isOpen()) { // Verifica se o websocket esta conectado
             socket.send(json);
         } else {
-            Toast.makeText(getApplicationContext(), getString(R.string.msgWebSocketConnectionIsNotActive), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.msgConnectionToDeviceIsNotActive), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), getString(R.string.msgEmptyField), Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(getApplicationContext(), getString(R.string.msgWebSocketConnectionIsNotActive), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.msgConnectionToDeviceIsNotActive), Toast.LENGTH_SHORT).show();
         }
     }
 

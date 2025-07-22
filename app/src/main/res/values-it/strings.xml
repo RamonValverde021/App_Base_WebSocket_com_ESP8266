@@ -7,7 +7,7 @@
     <string name="tltSerial">Seriale</string>
     <string name="msgAppConnected">Applicazione connessa!</string>
     <string name="msgFailReconnect">Impossibile riconnettersi</string>
-    <string name="msgWebSocketConnectionIsNotActive">La connessione WebSocket non è attiva!</string>
+    <string name="msgConnectionToDeviceIsNotActive">La connessione al dispositivo non è attiva!</string>
     <string name="msgDisconnected">Disconnesso</string>
     <string name="msgAlreadyDisconnect">Già disconnesso</string>
     <string name="msgConnecting">Connessione in corso...</string>
@@ -21,7 +21,7 @@
     <string name="msgEmptyField">Campo vuoto! Inserisci un messaggio</string>
     <string name="msgFailedAfterMultipleAttempts">Fallito dopo molteplici tentativi</string>
     <string name="tltSETTINGS">IMPOSTAZIONI:</string>
-    <string name="tltConfigureDevice">Configura dispositivo</string>
+    <string name="tltConfigureDeviceNetwork">Configurare la Rete del Dispositivo</string>
     <string name="tltWiFiNetworkSSID">Rete Wi-Fi (SSID):</string>
     <string name="tltPassword">Password:</string>
     <string name="tltIPAddress">Indirizzo IP:</string>
@@ -41,12 +41,9 @@
     <string name="txtConfirmGateway">Gateway:</string>
     <string name="txtConfirmDNS">DNS:</string>
     <string name="tltConfirmation">Conferma:</string>
-    <string name="txtBtnCancel">Cancellare:</string>
+    <string name="txtBtnCancel">Cancellare</string>
     <string name="txtBtnOk">Ok</string>
-    <string name="altFieldSSID">Il campo SSID è vuoto!</string>
-    <string name="altFieldPassword">Il campo Password è vuoto!</string>
-    <string name="altFieldIP">Il campo Indirizzo IP è vuoto!</string>
-    <string name="altFieldSubnet">Il campo Subnet Mask è vuoto!</string>
-    <string name="altFieldGateway">Il campo Gateway predefinito è vuoto!</string>
-    <string name="altFieldDNS">Il campo DNS è vuoto!</string>
+    <string name="altRequiredField">Campo obbligatorio!</string>
+    <string name="altInvalidIPAddress">Indirizzo IP non valido.</string>
+    <string name="msgSettingsSaved">Impostazioni salvate!</string>
 </resources>
