@@ -1,14 +1,14 @@
-package com.basewebsocket.model.json_enviar;
+package com.basewebsocket.model.json_main;
 
 import com.google.gson.annotations.SerializedName;
 
-public class JsonEnviar {
+public class JsonMainSend {
     @SerializedName("Id")
     String id;
     @SerializedName("Designação")
     String designacao;
 
-    public JsonEnviar(String id, String designacao) {
+    public JsonMainSend(String id, String designacao) {
         this.id = id;
         this.designacao = designacao;
     }

@@ -1,8 +1,8 @@
-package com.basewebsocket.model.json_receber;
+package com.basewebsocket.model.json_main;
 
 import com.google.gson.annotations.SerializedName;
 
-public class JsonReceber {
+public class JsonMainReceive {
     @SerializedName("Id")
     public String id;
     @SerializedName("Designação")

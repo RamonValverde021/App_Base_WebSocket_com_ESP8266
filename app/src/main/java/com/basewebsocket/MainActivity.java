@@ -3,7 +3,7 @@ package com.basewebsocket;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.basewebsocket.model.json_enviar.JsonEnviar;
+import com.basewebsocket.model.json_main.JsonMainSend;
 import com.google.gson.Gson;
 
 import android.os.Handler;
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     // Botão de teste de enviar mensagem
     public void sendJSON(View view) {
         Gson gson = new Gson();
-        JsonEnviar comando = new JsonEnviar("LightFy", "Acionamento");
+        JsonMainSend comando = new JsonMainSend("LightFy", "Acionamento");
         String json = gson.toJson(comando);
         if (socket != null && socket.isOpen()) { // Verifica se o websocket esta conectado
             socket.send(json);

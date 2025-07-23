@@ -11,7 +11,7 @@ import android.util.Log;
 
 import androidx.core.content.ContextCompat;
 
-import com.basewebsocket.model.json_receber.JsonReceber;
+import com.basewebsocket.model.json_main.JsonMainReceive;
 import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
@@ -129,7 +129,7 @@ public class MeuWebSocket extends WebSocketClient { // Essa é a classe personal
         int nightModeFlags = activity.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK; // Identica o tema do Smartphone, se está no modo claro ou escuro
         try {
             Gson gson = new Gson();
-            JsonReceber mensagem = gson.fromJson(mensagemJson, JsonReceber.class);
+            JsonMainReceive mensagem = gson.fromJson(mensagemJson, JsonMainReceive.class);
 
             if (mensagem != null && mensagem.dados != null && mensagem.dados.sensor != null) {
                 String id = mensagem.id;

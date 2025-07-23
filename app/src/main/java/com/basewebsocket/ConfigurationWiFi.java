@@ -23,10 +23,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.basewebsocket.model.json_configuration.JsonConfigSend;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.gson.Gson;
 
 import java.net.URI;
 import java.util.Objects;
@@ -105,7 +107,6 @@ public class ConfigurationWiFi extends AppCompatActivity {
         try {
             uri = new URI("ws://192.168.4.1:2450"); // Certifique-se que é a porta certa!
             socket = new MeuWebSocket(uri, this);  // passando a Activity agora usando a variável global
-            socket.connect();
 
             Log.d("debugWebSocket", "Tentando reconectar..."); // Escreve no Logcat que a tentativa de reconexão começou (útil para debug)
             try {
@@ -190,8 +191,7 @@ public class ConfigurationWiFi extends AppCompatActivity {
                                     new MaterialAlertDialogBuilder(this, R.style.MeuDialogoCustomizado)
                                             .setTitle(getString(R.string.tltConfirmation))
                                             .setMessage(mensagem)
-                                            .setPositiveButton(getString(R.string.txtBtnOk), (dialog, which) -> {
-                                                // Ações de confirmação
+                                            .setPositiveButton(getString(R.string.txtBtnOk), (dialog, which) -> { // Ações de confirmação
 
                                                 // Gravando dados no banco de dados
                                                 tinyDB.put("ssid", ssid);
@@ -200,6 +200,21 @@ public class ConfigurationWiFi extends AppCompatActivity {
                                                 tinyDB.put("subnet", subnet);
                                                 tinyDB.put("gateway", gateway);
                                                 tinyDB.put("dns", dns);
+
+                                                // Instancia a classe Json e preenche as chaves com o construtor geral
+                                                JsonConfigSend config = new JsonConfigSend(
+                                                        "aplicativo",
+                                                        "wi-fi",
+                                                        ssid, password, ip, subnet, gateway, dns
+                                                );
+
+                                                // Converter para JSON com Gson
+                                                Gson gson = new Gson();
+                                                String json = gson.toJson(config);
+                                                socket.send(json); // ✅ Envia o conteudo da configuração ao ESP8266
+
+                                                // Visualizando o Json criado no terminal
+                                                Log.d("JSONConfig", json);
 
                                                 // Exibindo mensagem de confirmação
                                                 Toast.makeText(this, getString(R.string.msgSettingsSaved), Toast.LENGTH_SHORT).show();
@@ -217,6 +232,7 @@ public class ConfigurationWiFi extends AppCompatActivity {
         } else {
             Toast.makeText(getApplicationContext(), getString(R.string.msgConnectionToDeviceIsNotActive), Toast.LENGTH_SHORT).show();
         }
+
     }
 
     /**
@@ -243,7 +259,7 @@ public class ConfigurationWiFi extends AppCompatActivity {
                     textInputLayout.setError(getString(R.string.altRequiredField)); // Informa no campo que está vazio
                     return null;
                 } else { // Se o campo estiver preenchido
-                    return Objects.requireNonNull(editText.getText()).toString(); // Retorna o valor do campo convertido em string
+                    return Objects.requireNonNull(editText.getText()).toString(); // Retorna o valor do campo convertido em string sem remover os espaços
                 }
             } else if (Objects.equals(nomeId, "txtPassword")) {
                 String password = Objects.requireNonNull(editText.getText()).toString().trim();
